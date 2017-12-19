@@ -11,21 +11,22 @@ namespace IO.TelstraTPN.Model {
   /// 
   /// </summary>
   [DataContract]
-  public class Model100MarketplaceImageResponse {
+  public class Link66 {
     /// <summary>
-    /// Gets or Sets Meta
+    /// Identifier of a link
     /// </summary>
-    [DataMember(Name="meta", EmitDefaultValue=false)]
-    [JsonProperty(PropertyName = "meta")]
-    public Meta Meta { get; set; }
+    /// <value>Identifier of a link</value>
+    [DataMember(Name="linkid", EmitDefaultValue=false)]
+    [JsonProperty(PropertyName = "linkid")]
+    public string Linkid { get; set; }
 
     /// <summary>
     /// 
     /// </summary>
     /// <value></value>
-    [DataMember(Name="objects", EmitDefaultValue=false)]
-    [JsonProperty(PropertyName = "objects")]
-    public List<Object52> Objects { get; set; }
+    [DataMember(Name="vport", EmitDefaultValue=false)]
+    [JsonProperty(PropertyName = "vport")]
+    public List<string> Vport { get; set; }
 
 
     /// <summary>
@@ -34,9 +35,9 @@ namespace IO.TelstraTPN.Model {
     /// <returns>String presentation of the object</returns>
     public override string ToString()  {
       var sb = new StringBuilder();
-      sb.Append("class Model100MarketplaceImageResponse {\n");
-      sb.Append("  Meta: ").Append(Meta).Append("\n");
-      sb.Append("  Objects: ").Append(Objects).Append("\n");
+      sb.Append("class Link66 {\n");
+      sb.Append("  Linkid: ").Append(Linkid).Append("\n");
+      sb.Append("  Vport: ").Append(Vport).Append("\n");
       sb.Append("}\n");
       return sb.ToString();
     }

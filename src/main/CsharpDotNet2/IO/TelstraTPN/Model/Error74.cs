@@ -11,38 +11,38 @@ namespace IO.TelstraTPN.Model {
   /// 
   /// </summary>
   [DataContract]
-  public class Ttms100TopologyTagObjectsResponse {
+  public class Error74 {
     /// <summary>
     /// 
     /// </summary>
     /// <value></value>
-    [DataMember(Name="endpoints", EmitDefaultValue=false)]
-    [JsonProperty(PropertyName = "endpoints")]
-    public List<Endpoint> Endpoints { get; set; }
+    [DataMember(Name="ns", EmitDefaultValue=false)]
+    [JsonProperty(PropertyName = "ns")]
+    public string Ns { get; set; }
 
     /// <summary>
     /// 
     /// </summary>
     /// <value></value>
-    [DataMember(Name="links", EmitDefaultValue=false)]
-    [JsonProperty(PropertyName = "links")]
-    public List<Link66> Links { get; set; }
+    [DataMember(Name="error-code", EmitDefaultValue=false)]
+    [JsonProperty(PropertyName = "error-code")]
+    public int? ErrorCode { get; set; }
 
     /// <summary>
     /// 
     /// </summary>
     /// <value></value>
-    [DataMember(Name="sharedvports", EmitDefaultValue=false)]
-    [JsonProperty(PropertyName = "sharedvports")]
-    public List<string> Sharedvports { get; set; }
+    [DataMember(Name="error-message", EmitDefaultValue=false)]
+    [JsonProperty(PropertyName = "error-message")]
+    public string ErrorMessage { get; set; }
 
     /// <summary>
     /// 
     /// </summary>
     /// <value></value>
-    [DataMember(Name="topology_tag", EmitDefaultValue=false)]
-    [JsonProperty(PropertyName = "topology_tag")]
-    public string TopologyTag { get; set; }
+    [DataMember(Name="error-auxiliary", EmitDefaultValue=false)]
+    [JsonProperty(PropertyName = "error-auxiliary")]
+    public string ErrorAuxiliary { get; set; }
 
 
     /// <summary>
@@ -51,11 +51,11 @@ namespace IO.TelstraTPN.Model {
     /// <returns>String presentation of the object</returns>
     public override string ToString()  {
       var sb = new StringBuilder();
-      sb.Append("class Ttms100TopologyTagObjectsResponse {\n");
-      sb.Append("  Endpoints: ").Append(Endpoints).Append("\n");
-      sb.Append("  Links: ").Append(Links).Append("\n");
-      sb.Append("  Sharedvports: ").Append(Sharedvports).Append("\n");
-      sb.Append("  TopologyTag: ").Append(TopologyTag).Append("\n");
+      sb.Append("class Error74 {\n");
+      sb.Append("  Ns: ").Append(Ns).Append("\n");
+      sb.Append("  ErrorCode: ").Append(ErrorCode).Append("\n");
+      sb.Append("  ErrorMessage: ").Append(ErrorMessage).Append("\n");
+      sb.Append("  ErrorAuxiliary: ").Append(ErrorAuxiliary).Append("\n");
       sb.Append("}\n");
       return sb.ToString();
     }

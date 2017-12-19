@@ -4,12 +4,12 @@ All URIs are relative to *https://penapi.pacnetconnect.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**GetListOfAllTheDataCenters**](DatacentresApi.md#getlistofallthedatacenters) | **GET** /1.0.0/inventory/datacenters | Get list of all the data centers
+[**100InventoryDatacentersGet**](DatacentresApi.md#100inventorydatacentersget) | **GET** /1.0.0/inventory/datacenters | Get list of all the data centers
 
 
-<a name="getlistofallthedatacenters"></a>
-# **GetListOfAllTheDataCenters**
-> List<Model100InventoryDatacentersResponse> GetListOfAllTheDataCenters ()
+<a name="100inventorydatacentersget"></a>
+# **100InventoryDatacentersGet**
+> List<Model100InventoryDatacentersResponse> 100InventoryDatacentersGet ()
 
 Get list of all the data centers
 
@@ -25,25 +25,22 @@ using IO.TelstraTPN.Model;
 
 namespace Example
 {
-    public class GetListOfAllTheDataCentersExample
+    public class 100InventoryDatacentersGetExample
     {
         public void main()
         {
             
-            // Configure OAuth2 access token for authorization: auth
-            Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
-
             var apiInstance = new DatacentresApi();
 
             try
             {
                 // Get list of all the data centers
-                List&lt;Model100InventoryDatacentersResponse&gt; result = apiInstance.GetListOfAllTheDataCenters();
+                List&lt;Model100InventoryDatacentersResponse&gt; result = apiInstance.100InventoryDatacentersGet();
                 Debug.WriteLine(result);
             }
             catch (Exception e)
             {
-                Debug.Print("Exception when calling DatacentresApi.GetListOfAllTheDataCenters: " + e.Message );
+                Debug.Print("Exception when calling DatacentresApi.100InventoryDatacentersGet: " + e.Message );
             }
         }
     }
@@ -59,7 +56,7 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-[auth](../README.md#auth)
+No authorization required
 
 ### HTTP request headers
 

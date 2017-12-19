@@ -4,12 +4,12 @@ All URIs are relative to *https://penapi.pacnetconnect.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**ListImagesInTheMarketplace**](VnfsApi.md#listimagesinthemarketplace) | **GET** /1.0.0/marketplace/image | List images in the Marketplace
+[**100MarketplaceImageGet**](VnfsApi.md#100marketplaceimageget) | **GET** /1.0.0/marketplace/image | List images in the Marketplace
 
 
-<a name="listimagesinthemarketplace"></a>
-# **ListImagesInTheMarketplace**
-> Model100MarketplaceImageResponse ListImagesInTheMarketplace ()
+<a name="100marketplaceimageget"></a>
+# **100MarketplaceImageGet**
+> Model100MarketplaceImageResponse 100MarketplaceImageGet ()
 
 List images in the Marketplace
 
@@ -25,25 +25,22 @@ using IO.TelstraTPN.Model;
 
 namespace Example
 {
-    public class ListImagesInTheMarketplaceExample
+    public class 100MarketplaceImageGetExample
     {
         public void main()
         {
             
-            // Configure OAuth2 access token for authorization: auth
-            Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
-
             var apiInstance = new VnfsApi();
 
             try
             {
                 // List images in the Marketplace
-                Model100MarketplaceImageResponse result = apiInstance.ListImagesInTheMarketplace();
+                Model100MarketplaceImageResponse result = apiInstance.100MarketplaceImageGet();
                 Debug.WriteLine(result);
             }
             catch (Exception e)
             {
-                Debug.Print("Exception when calling VnfsApi.ListImagesInTheMarketplace: " + e.Message );
+                Debug.Print("Exception when calling VnfsApi.100MarketplaceImageGet: " + e.Message );
             }
         }
     }
@@ -59,7 +56,7 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-[auth](../README.md#auth)
+No authorization required
 
 ### HTTP request headers
 

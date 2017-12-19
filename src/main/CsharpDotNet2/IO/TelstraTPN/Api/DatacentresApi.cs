@@ -15,7 +15,7 @@ namespace IO.TelstraTPN.Api
         /// Get list of all the data centers Get list of all the data centers
         /// </summary>
         /// <returns>List&lt;Model100InventoryDatacentersResponse&gt;</returns>
-        List<Model100InventoryDatacentersResponse> GetListOfAllTheDataCenters ();
+        List<Model100InventoryDatacentersResponse> 100InventoryDatacentersGet ();
     }
   
     /// <summary>
@@ -75,7 +75,7 @@ namespace IO.TelstraTPN.Api
         /// Get list of all the data centers Get list of all the data centers
         /// </summary>
         /// <returns>List&lt;Model100InventoryDatacentersResponse&gt;</returns>            
-        public List<Model100InventoryDatacentersResponse> GetListOfAllTheDataCenters ()
+        public List<Model100InventoryDatacentersResponse> 100InventoryDatacentersGet ()
         {
             
     
@@ -90,15 +90,15 @@ namespace IO.TelstraTPN.Api
     
                                                     
             // authentication setting, if any
-            String[] authSettings = new String[] { "auth" };
+            String[] authSettings = new String[] {  };
     
             // make the HTTP request
             IRestResponse response = (IRestResponse) ApiClient.CallApi(path, Method.GET, queryParams, postBody, headerParams, formParams, fileParams, authSettings);
     
             if (((int)response.StatusCode) >= 400)
-                throw new ApiException ((int)response.StatusCode, "Error calling GetListOfAllTheDataCenters: " + response.Content, response.Content);
+                throw new ApiException ((int)response.StatusCode, "Error calling 100InventoryDatacentersGet: " + response.Content, response.Content);
             else if (((int)response.StatusCode) == 0)
-                throw new ApiException ((int)response.StatusCode, "Error calling GetListOfAllTheDataCenters: " + response.ErrorMessage, response.ErrorMessage);
+                throw new ApiException ((int)response.StatusCode, "Error calling 100InventoryDatacentersGet: " + response.ErrorMessage, response.ErrorMessage);
     
             return (List<Model100InventoryDatacentersResponse>) ApiClient.Deserialize(response.Content, typeof(List<Model100InventoryDatacentersResponse>), response.Headers);
         }

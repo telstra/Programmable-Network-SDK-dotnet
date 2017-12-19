@@ -257,10 +257,6 @@ namespace IO.TelstraTPN.Client
                 // determine which one to use
                 switch(auth)
                 {
-                    case "auth":
-                        
-                        //TODO support oauth
-                        break;
                     default:
                         //TODO show warning about security definition not found
                         break;

@@ -4,7 +4,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Endpoints** | [**List&lt;Endpoint&gt;**](Endpoint.md) |  | [optional] 
-**Links** | [**List&lt;Link62&gt;**](Link62.md) |  | [optional] 
+**Links** | [**List&lt;Link66&gt;**](Link66.md) |  | [optional] 
 **Sharedvports** | **List&lt;string&gt;** |  | [optional] 
 **TopologyTag** | **string** |  | [optional] 
 

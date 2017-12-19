@@ -17,7 +17,7 @@ namespace IO.TelstraTPN.Model {
     /// </summary>
     [DataMember(Name="params", EmitDefaultValue=false)]
     [JsonProperty(PropertyName = "params")]
-    public Params29 _Params { get; set; }
+    public Params31 _Params { get; set; }
 
 
     /// <summary>

@@ -4,13 +4,13 @@ All URIs are relative to *https://penapi.pacnetconnect.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**GetAccountInformationDetails**](CustomersApi.md#getaccountinformationdetails) | **GET** /1.0.0/account/{customeruuid} | Get account information details
-[**ListUsers**](CustomersApi.md#listusers) | **GET** /1.0.0/account/{customeruuid}/user | List users
+[**100AccountByCustomeruuidGet**](CustomersApi.md#100accountbycustomeruuidget) | **GET** /1.0.0/account/{customeruuid} | Get account information details
+[**100AccountUserByCustomeruuidGet**](CustomersApi.md#100accountuserbycustomeruuidget) | **GET** /1.0.0/account/{customeruuid}/user | List users
 
 
-<a name="getaccountinformationdetails"></a>
-# **GetAccountInformationDetails**
-> Model100AccountResponse GetAccountInformationDetails (string customeruuid)
+<a name="100accountbycustomeruuidget"></a>
+# **100AccountByCustomeruuidGet**
+> Model100AccountResponse 100AccountByCustomeruuidGet (string customeruuid)
 
 Get account information details
 
@@ -26,26 +26,23 @@ using IO.TelstraTPN.Model;
 
 namespace Example
 {
-    public class GetAccountInformationDetailsExample
+    public class 100AccountByCustomeruuidGetExample
     {
         public void main()
         {
             
-            // Configure OAuth2 access token for authorization: auth
-            Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
-
             var apiInstance = new CustomersApi();
             var customeruuid = customeruuid_example;  // string | Unique identifier representing a specific customer
 
             try
             {
                 // Get account information details
-                Model100AccountResponse result = apiInstance.GetAccountInformationDetails(customeruuid);
+                Model100AccountResponse result = apiInstance.100AccountByCustomeruuidGet(customeruuid);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
             {
-                Debug.Print("Exception when calling CustomersApi.GetAccountInformationDetails: " + e.Message );
+                Debug.Print("Exception when calling CustomersApi.100AccountByCustomeruuidGet: " + e.Message );
             }
         }
     }
@@ -64,7 +61,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[auth](../README.md#auth)
+No authorization required
 
 ### HTTP request headers
 
@@ -73,9 +70,9 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="listusers"></a>
-# **ListUsers**
-> List<User> ListUsers (string customeruuid)
+<a name="100accountuserbycustomeruuidget"></a>
+# **100AccountUserByCustomeruuidGet**
+> List<User> 100AccountUserByCustomeruuidGet (string customeruuid)
 
 List users
 
@@ -91,26 +88,23 @@ using IO.TelstraTPN.Model;
 
 namespace Example
 {
-    public class ListUsersExample
+    public class 100AccountUserByCustomeruuidGetExample
     {
         public void main()
         {
             
-            // Configure OAuth2 access token for authorization: auth
-            Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
-
             var apiInstance = new CustomersApi();
             var customeruuid = customeruuid_example;  // string | Unique identifier representing a specific customer
 
             try
             {
                 // List users
-                List&lt;User&gt; result = apiInstance.ListUsers(customeruuid);
+                List&lt;User&gt; result = apiInstance.100AccountUserByCustomeruuidGet(customeruuid);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
             {
-                Debug.Print("Exception when calling CustomersApi.ListUsers: " + e.Message );
+                Debug.Print("Exception when calling CustomersApi.100AccountUserByCustomeruuidGet: " + e.Message );
             }
         }
     }
@@ -129,7 +123,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[auth](../README.md#auth)
+No authorization required
 
 ### HTTP request headers
 

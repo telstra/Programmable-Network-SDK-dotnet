@@ -11,21 +11,14 @@ namespace IO.TelstraTPN.Model {
   /// 
   /// </summary>
   [DataContract]
-  public class Model100MarketplaceImageResponse {
-    /// <summary>
-    /// Gets or Sets Meta
-    /// </summary>
-    [DataMember(Name="meta", EmitDefaultValue=false)]
-    [JsonProperty(PropertyName = "meta")]
-    public Meta Meta { get; set; }
-
+  public class Eis100EndpointsAssignTopologyTagRequest {
     /// <summary>
     /// 
     /// </summary>
     /// <value></value>
-    [DataMember(Name="objects", EmitDefaultValue=false)]
-    [JsonProperty(PropertyName = "objects")]
-    public List<Object52> Objects { get; set; }
+    [DataMember(Name="topology_tag", EmitDefaultValue=false)]
+    [JsonProperty(PropertyName = "topology_tag")]
+    public string TopologyTag { get; set; }
 
 
     /// <summary>
@@ -34,9 +27,8 @@ namespace IO.TelstraTPN.Model {
     /// <returns>String presentation of the object</returns>
     public override string ToString()  {
       var sb = new StringBuilder();
-      sb.Append("class Model100MarketplaceImageResponse {\n");
-      sb.Append("  Meta: ").Append(Meta).Append("\n");
-      sb.Append("  Objects: ").Append(Objects).Append("\n");
+      sb.Append("class Eis100EndpointsAssignTopologyTagRequest {\n");
+      sb.Append("  TopologyTag: ").Append(TopologyTag).Append("\n");
       sb.Append("}\n");
       return sb.ToString();
     }

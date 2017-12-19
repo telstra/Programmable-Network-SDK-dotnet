@@ -4,13 +4,13 @@ All URIs are relative to *https://penapi.pacnetconnect.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**CreateAnAuthenticationToken**](AuthenticationApi.md#createanauthenticationtoken) | **POST** /1.0.0/auth/generatetoken | Create an authentication token
-[**ValidateAuthenticationToken**](AuthenticationApi.md#validateauthenticationtoken) | **GET** /1.0.0/auth/validatetoken | Validate authentication token
+[**100AuthGeneratetokenPost**](AuthenticationApi.md#100authgeneratetokenpost) | **POST** /1.0.0/auth/generatetoken | Create an authentication token
+[**100AuthValidatetokenGet**](AuthenticationApi.md#100authvalidatetokenget) | **GET** /1.0.0/auth/validatetoken | Validate authentication token
 
 
-<a name="createanauthenticationtoken"></a>
-# **CreateAnAuthenticationToken**
-> Model100AuthGeneratetokenResponse CreateAnAuthenticationToken (string grantType, string username, string password)
+<a name="100authgeneratetokenpost"></a>
+# **100AuthGeneratetokenPost**
+> Model100AuthGeneratetokenResponse 100AuthGeneratetokenPost (string grantType, string username, string password)
 
 Create an authentication token
 
@@ -26,14 +26,11 @@ using IO.TelstraTPN.Model;
 
 namespace Example
 {
-    public class CreateAnAuthenticationTokenExample
+    public class 100AuthGeneratetokenPostExample
     {
         public void main()
         {
             
-            // Configure OAuth2 access token for authorization: auth
-            Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
-
             var apiInstance = new AuthenticationApi();
             var grantType = grantType_example;  // string | 
             var username = username_example;  // string | 
@@ -42,12 +39,12 @@ namespace Example
             try
             {
                 // Create an authentication token
-                Model100AuthGeneratetokenResponse result = apiInstance.CreateAnAuthenticationToken(grantType, username, password);
+                Model100AuthGeneratetokenResponse result = apiInstance.100AuthGeneratetokenPost(grantType, username, password);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
             {
-                Debug.Print("Exception when calling AuthenticationApi.CreateAnAuthenticationToken: " + e.Message );
+                Debug.Print("Exception when calling AuthenticationApi.100AuthGeneratetokenPost: " + e.Message );
             }
         }
     }
@@ -68,7 +65,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[auth](../README.md#auth)
+No authorization required
 
 ### HTTP request headers
 
@@ -77,9 +74,9 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="validateauthenticationtoken"></a>
-# **ValidateAuthenticationToken**
-> Model100AuthValidatetokenResponse ValidateAuthenticationToken ()
+<a name="100authvalidatetokenget"></a>
+# **100AuthValidatetokenGet**
+> Model100AuthValidatetokenResponse 100AuthValidatetokenGet ()
 
 Validate authentication token
 
@@ -95,25 +92,22 @@ using IO.TelstraTPN.Model;
 
 namespace Example
 {
-    public class ValidateAuthenticationTokenExample
+    public class 100AuthValidatetokenGetExample
     {
         public void main()
         {
             
-            // Configure OAuth2 access token for authorization: auth
-            Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
-
             var apiInstance = new AuthenticationApi();
 
             try
             {
                 // Validate authentication token
-                Model100AuthValidatetokenResponse result = apiInstance.ValidateAuthenticationToken();
+                Model100AuthValidatetokenResponse result = apiInstance.100AuthValidatetokenGet();
                 Debug.WriteLine(result);
             }
             catch (Exception e)
             {
-                Debug.Print("Exception when calling AuthenticationApi.ValidateAuthenticationToken: " + e.Message );
+                Debug.Print("Exception when calling AuthenticationApi.100AuthValidatetokenGet: " + e.Message );
             }
         }
     }
@@ -129,7 +123,7 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-[auth](../README.md#auth)
+No authorization required
 
 ### HTTP request headers
 

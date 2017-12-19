@@ -1,9 +1,10 @@
-# IO.TelstraTPN.Model.Model100InventoryLinksContractResponse
+# IO.TelstraTPN.Model.Link66
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**_Params** | [**Params31**](Params31.md) |  | [optional] 
+**Linkid** | **string** | Identifier of a link | [optional] 
+**Vport** | **List&lt;string&gt;** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

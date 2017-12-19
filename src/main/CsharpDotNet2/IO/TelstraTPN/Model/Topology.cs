@@ -82,7 +82,7 @@ namespace IO.TelstraTPN.Model {
     /// <value></value>
     [DataMember(Name="creation_date", EmitDefaultValue=false)]
     [JsonProperty(PropertyName = "creation_date")]
-    public int? CreationDate { get; set; }
+    public long? CreationDate { get; set; }
 
     /// <summary>
     /// 

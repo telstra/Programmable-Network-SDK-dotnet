@@ -16,13 +16,13 @@ namespace IO.TelstraTPN.Api
         /// </summary>
         /// <param name="customeruuid">Unique identifier representing a specific customer</param>
         /// <returns>Model100AccountResponse</returns>
-        Model100AccountResponse GetAccountInformationDetails (string customeruuid);
+        Model100AccountResponse 100AccountByCustomeruuidGet (string customeruuid);
         /// <summary>
         /// List users List all users associated with the specified customer
         /// </summary>
         /// <param name="customeruuid">Unique identifier representing a specific customer</param>
         /// <returns>List&lt;User&gt;</returns>
-        List<User> ListUsers (string customeruuid);
+        List<User> 100AccountUserByCustomeruuidGet (string customeruuid);
     }
   
     /// <summary>
@@ -83,11 +83,11 @@ namespace IO.TelstraTPN.Api
         /// </summary>
         /// <param name="customeruuid">Unique identifier representing a specific customer</param> 
         /// <returns>Model100AccountResponse</returns>            
-        public Model100AccountResponse GetAccountInformationDetails (string customeruuid)
+        public Model100AccountResponse 100AccountByCustomeruuidGet (string customeruuid)
         {
             
             // verify the required parameter 'customeruuid' is set
-            if (customeruuid == null) throw new ApiException(400, "Missing required parameter 'customeruuid' when calling GetAccountInformationDetails");
+            if (customeruuid == null) throw new ApiException(400, "Missing required parameter 'customeruuid' when calling 100AccountByCustomeruuidGet");
             
     
             var path = "/1.0.0/account/{customeruuid}";
@@ -102,15 +102,15 @@ namespace IO.TelstraTPN.Api
     
                                                     
             // authentication setting, if any
-            String[] authSettings = new String[] { "auth" };
+            String[] authSettings = new String[] {  };
     
             // make the HTTP request
             IRestResponse response = (IRestResponse) ApiClient.CallApi(path, Method.GET, queryParams, postBody, headerParams, formParams, fileParams, authSettings);
     
             if (((int)response.StatusCode) >= 400)
-                throw new ApiException ((int)response.StatusCode, "Error calling GetAccountInformationDetails: " + response.Content, response.Content);
+                throw new ApiException ((int)response.StatusCode, "Error calling 100AccountByCustomeruuidGet: " + response.Content, response.Content);
             else if (((int)response.StatusCode) == 0)
-                throw new ApiException ((int)response.StatusCode, "Error calling GetAccountInformationDetails: " + response.ErrorMessage, response.ErrorMessage);
+                throw new ApiException ((int)response.StatusCode, "Error calling 100AccountByCustomeruuidGet: " + response.ErrorMessage, response.ErrorMessage);
     
             return (Model100AccountResponse) ApiClient.Deserialize(response.Content, typeof(Model100AccountResponse), response.Headers);
         }
@@ -120,11 +120,11 @@ namespace IO.TelstraTPN.Api
         /// </summary>
         /// <param name="customeruuid">Unique identifier representing a specific customer</param> 
         /// <returns>List&lt;User&gt;</returns>            
-        public List<User> ListUsers (string customeruuid)
+        public List<User> 100AccountUserByCustomeruuidGet (string customeruuid)
         {
             
             // verify the required parameter 'customeruuid' is set
-            if (customeruuid == null) throw new ApiException(400, "Missing required parameter 'customeruuid' when calling ListUsers");
+            if (customeruuid == null) throw new ApiException(400, "Missing required parameter 'customeruuid' when calling 100AccountUserByCustomeruuidGet");
             
     
             var path = "/1.0.0/account/{customeruuid}/user";
@@ -139,15 +139,15 @@ namespace IO.TelstraTPN.Api
     
                                                     
             // authentication setting, if any
-            String[] authSettings = new String[] { "auth" };
+            String[] authSettings = new String[] {  };
     
             // make the HTTP request
             IRestResponse response = (IRestResponse) ApiClient.CallApi(path, Method.GET, queryParams, postBody, headerParams, formParams, fileParams, authSettings);
     
             if (((int)response.StatusCode) >= 400)
-                throw new ApiException ((int)response.StatusCode, "Error calling ListUsers: " + response.Content, response.Content);
+                throw new ApiException ((int)response.StatusCode, "Error calling 100AccountUserByCustomeruuidGet: " + response.Content, response.Content);
             else if (((int)response.StatusCode) == 0)
-                throw new ApiException ((int)response.StatusCode, "Error calling ListUsers: " + response.ErrorMessage, response.ErrorMessage);
+                throw new ApiException ((int)response.StatusCode, "Error calling 100AccountUserByCustomeruuidGet: " + response.ErrorMessage, response.ErrorMessage);
     
             return (List<User>) ApiClient.Deserialize(response.Content, typeof(List<User>), response.Headers);
         }

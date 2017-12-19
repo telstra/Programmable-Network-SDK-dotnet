@@ -15,7 +15,7 @@ namespace IO.TelstraTPN.Api
         /// List images in the Marketplace List images in the Marketplace
         /// </summary>
         /// <returns>Model100MarketplaceImageResponse</returns>
-        Model100MarketplaceImageResponse ListImagesInTheMarketplace ();
+        Model100MarketplaceImageResponse 100MarketplaceImageGet ();
     }
   
     /// <summary>
@@ -75,7 +75,7 @@ namespace IO.TelstraTPN.Api
         /// List images in the Marketplace List images in the Marketplace
         /// </summary>
         /// <returns>Model100MarketplaceImageResponse</returns>            
-        public Model100MarketplaceImageResponse ListImagesInTheMarketplace ()
+        public Model100MarketplaceImageResponse 100MarketplaceImageGet ()
         {
             
     
@@ -90,15 +90,15 @@ namespace IO.TelstraTPN.Api
     
                                                     
             // authentication setting, if any
-            String[] authSettings = new String[] { "auth" };
+            String[] authSettings = new String[] {  };
     
             // make the HTTP request
             IRestResponse response = (IRestResponse) ApiClient.CallApi(path, Method.GET, queryParams, postBody, headerParams, formParams, fileParams, authSettings);
     
             if (((int)response.StatusCode) >= 400)
-                throw new ApiException ((int)response.StatusCode, "Error calling ListImagesInTheMarketplace: " + response.Content, response.Content);
+                throw new ApiException ((int)response.StatusCode, "Error calling 100MarketplaceImageGet: " + response.Content, response.Content);
             else if (((int)response.StatusCode) == 0)
-                throw new ApiException ((int)response.StatusCode, "Error calling ListImagesInTheMarketplace: " + response.ErrorMessage, response.ErrorMessage);
+                throw new ApiException ((int)response.StatusCode, "Error calling 100MarketplaceImageGet: " + response.ErrorMessage, response.ErrorMessage);
     
             return (Model100MarketplaceImageResponse) ApiClient.Deserialize(response.Content, typeof(Model100MarketplaceImageResponse), response.Headers);
         }
