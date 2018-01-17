@@ -1,18 +1,18 @@
-# IO.TelstraTPN..LinksApi
+# IO.TelstraTPN.Api.LinksApi
 
 All URIs are relative to *https://penapi.pacnetconnect.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**100InventoryLinkPost**](LinksApi.md#100inventorylinkpost) | **POST** /1.0.0/inventory/link | Create Link and initial Contract
-[**100InventoryLinksByLinkidGet**](LinksApi.md#100inventorylinksbylinkidget) | **GET** /1.0.0/inventory/links/{linkid} | Get details of specified link
-[**100InventoryLinksCustomerByCustomeruuidGet**](LinksApi.md#100inventorylinkscustomerbycustomeruuidget) | **GET** /1.0.0/inventory/links/customer/{customeruuid} | Get active Links
-[**100InventoryLinksHistoryByLinkidGet**](LinksApi.md#100inventorylinkshistorybylinkidget) | **GET** /1.0.0/inventory/links/history/{linkid} | Get Link history
+[**InventoryLinkPost**](LinksApi.md#inventorylinkpost) | **POST** /1.0.0/inventory/link | Create Link and initial Contract
+[**InventoryLinksByLinkidGet**](LinksApi.md#inventorylinksbylinkidget) | **GET** /1.0.0/inventory/links/{linkid} | Get details of specified link
+[**InventoryLinksCustomerByCustomeruuidGet**](LinksApi.md#inventorylinkscustomerbycustomeruuidget) | **GET** /1.0.0/inventory/links/customer/{customeruuid} | Get active Links
+[**InventoryLinksHistoryByLinkidGet**](LinksApi.md#inventorylinkshistorybylinkidget) | **GET** /1.0.0/inventory/links/history/{linkid} | Get Link history
 
 
-<a name="100inventorylinkpost"></a>
-# **100InventoryLinkPost**
-> Model100InventoryLinkResponse 100InventoryLinkPost (Model100InventoryLinkRequest body)
+<a name="inventorylinkpost"></a>
+# **InventoryLinkPost**
+> InventoryLinkResponse InventoryLinkPost (InventoryLinkRequest body)
 
 Create Link and initial Contract
 
@@ -23,28 +23,31 @@ Create Link and initial Contract
 using System;
 using System.Diagnostics;
 using IO.TelstraTPN.Api;
-using IO.TelstraTPN.Client;
+using IO.TelstraTPN;
 using IO.TelstraTPN.Model;
 
 namespace Example
 {
-    public class 100InventoryLinkPostExample
+    public class InventoryLinkPostExample
     {
         public void main()
         {
             
+            // Configure OAuth2 access token for authorization: auth
+            Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
+
             var apiInstance = new LinksApi();
-            var body = new Model100InventoryLinkRequest(); // Model100InventoryLinkRequest |  (optional) 
+            var body = new InventoryLinkRequest(); // InventoryLinkRequest |  (optional) 
 
             try
             {
                 // Create Link and initial Contract
-                Model100InventoryLinkResponse result = apiInstance.100InventoryLinkPost(body);
+                InventoryLinkResponse result = apiInstance.InventoryLinkPost(body);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
             {
-                Debug.Print("Exception when calling LinksApi.100InventoryLinkPost: " + e.Message );
+                Debug.Print("Exception when calling LinksApi.InventoryLinkPost: " + e.Message );
             }
         }
     }
@@ -55,15 +58,15 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**Model100InventoryLinkRequest**](Model100InventoryLinkRequest.md)|  | [optional] 
+ **body** | [**InventoryLinkRequest**](InventoryLinkRequest.md)|  | [optional] 
 
 ### Return type
 
-[**Model100InventoryLinkResponse**](Model100InventoryLinkResponse.md)
+[**InventoryLinkResponse**](InventoryLinkResponse.md)
 
 ### Authorization
 
-No authorization required
+[auth](../README.md#auth)
 
 ### HTTP request headers
 
@@ -72,9 +75,9 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="100inventorylinksbylinkidget"></a>
-# **100InventoryLinksByLinkidGet**
-> Model100InventoryLinksResponse 100InventoryLinksByLinkidGet (string linkid)
+<a name="inventorylinksbylinkidget"></a>
+# **InventoryLinksByLinkidGet**
+> InventoryLinksResponse InventoryLinksByLinkidGet (string linkid)
 
 Get details of specified link
 
@@ -85,28 +88,31 @@ Get details of specified link
 using System;
 using System.Diagnostics;
 using IO.TelstraTPN.Api;
-using IO.TelstraTPN.Client;
+using IO.TelstraTPN;
 using IO.TelstraTPN.Model;
 
 namespace Example
 {
-    public class 100InventoryLinksByLinkidGetExample
+    public class InventoryLinksByLinkidGetExample
     {
         public void main()
         {
             
+            // Configure OAuth2 access token for authorization: auth
+            Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
+
             var apiInstance = new LinksApi();
             var linkid = linkid_example;  // string | Unique identifier representing a specific link
 
             try
             {
                 // Get details of specified link
-                Model100InventoryLinksResponse result = apiInstance.100InventoryLinksByLinkidGet(linkid);
+                InventoryLinksResponse result = apiInstance.InventoryLinksByLinkidGet(linkid);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
             {
-                Debug.Print("Exception when calling LinksApi.100InventoryLinksByLinkidGet: " + e.Message );
+                Debug.Print("Exception when calling LinksApi.InventoryLinksByLinkidGet: " + e.Message );
             }
         }
     }
@@ -121,11 +127,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Model100InventoryLinksResponse**](Model100InventoryLinksResponse.md)
+[**InventoryLinksResponse**](InventoryLinksResponse.md)
 
 ### Authorization
 
-No authorization required
+[auth](../README.md#auth)
 
 ### HTTP request headers
 
@@ -134,9 +140,9 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="100inventorylinkscustomerbycustomeruuidget"></a>
-# **100InventoryLinksCustomerByCustomeruuidGet**
-> List<Link> 100InventoryLinksCustomerByCustomeruuidGet (string customeruuid)
+<a name="inventorylinkscustomerbycustomeruuidget"></a>
+# **InventoryLinksCustomerByCustomeruuidGet**
+> List<Link> InventoryLinksCustomerByCustomeruuidGet (string customeruuid)
 
 Get active Links
 
@@ -147,28 +153,31 @@ Get active Links
 using System;
 using System.Diagnostics;
 using IO.TelstraTPN.Api;
-using IO.TelstraTPN.Client;
+using IO.TelstraTPN;
 using IO.TelstraTPN.Model;
 
 namespace Example
 {
-    public class 100InventoryLinksCustomerByCustomeruuidGetExample
+    public class InventoryLinksCustomerByCustomeruuidGetExample
     {
         public void main()
         {
             
+            // Configure OAuth2 access token for authorization: auth
+            Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
+
             var apiInstance = new LinksApi();
             var customeruuid = customeruuid_example;  // string | Unique identifier representing a specific customer
 
             try
             {
                 // Get active Links
-                List&lt;Link&gt; result = apiInstance.100InventoryLinksCustomerByCustomeruuidGet(customeruuid);
+                List&lt;Link&gt; result = apiInstance.InventoryLinksCustomerByCustomeruuidGet(customeruuid);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
             {
-                Debug.Print("Exception when calling LinksApi.100InventoryLinksCustomerByCustomeruuidGet: " + e.Message );
+                Debug.Print("Exception when calling LinksApi.InventoryLinksCustomerByCustomeruuidGet: " + e.Message );
             }
         }
     }
@@ -187,7 +196,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[auth](../README.md#auth)
 
 ### HTTP request headers
 
@@ -196,9 +205,9 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="100inventorylinkshistorybylinkidget"></a>
-# **100InventoryLinksHistoryByLinkidGet**
-> Model100InventoryLinksHistoryResponse 100InventoryLinksHistoryByLinkidGet (string linkid)
+<a name="inventorylinkshistorybylinkidget"></a>
+# **InventoryLinksHistoryByLinkidGet**
+> InventoryLinksHistoryResponse InventoryLinksHistoryByLinkidGet (string linkid)
 
 Get Link history
 
@@ -209,28 +218,31 @@ Get Link history
 using System;
 using System.Diagnostics;
 using IO.TelstraTPN.Api;
-using IO.TelstraTPN.Client;
+using IO.TelstraTPN;
 using IO.TelstraTPN.Model;
 
 namespace Example
 {
-    public class 100InventoryLinksHistoryByLinkidGetExample
+    public class InventoryLinksHistoryByLinkidGetExample
     {
         public void main()
         {
             
+            // Configure OAuth2 access token for authorization: auth
+            Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
+
             var apiInstance = new LinksApi();
             var linkid = linkid_example;  // string | Unique identifier representing a specific link
 
             try
             {
                 // Get Link history
-                Model100InventoryLinksHistoryResponse result = apiInstance.100InventoryLinksHistoryByLinkidGet(linkid);
+                InventoryLinksHistoryResponse result = apiInstance.InventoryLinksHistoryByLinkidGet(linkid);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
             {
-                Debug.Print("Exception when calling LinksApi.100InventoryLinksHistoryByLinkidGet: " + e.Message );
+                Debug.Print("Exception when calling LinksApi.InventoryLinksHistoryByLinkidGet: " + e.Message );
             }
         }
     }
@@ -245,11 +257,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Model100InventoryLinksHistoryResponse**](Model100InventoryLinksHistoryResponse.md)
+[**InventoryLinksHistoryResponse**](InventoryLinksHistoryResponse.md)
 
 ### Authorization
 
-No authorization required
+[auth](../README.md#auth)
 
 ### HTTP request headers
 

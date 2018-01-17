@@ -1,15 +1,15 @@
-# IO.TelstraTPN..DatacentresApi
+# IO.TelstraTPN.Api.DatacentresApi
 
 All URIs are relative to *https://penapi.pacnetconnect.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**100InventoryDatacentersGet**](DatacentresApi.md#100inventorydatacentersget) | **GET** /1.0.0/inventory/datacenters | Get list of all the data centers
+[**InventoryDatacentersGet**](DatacentresApi.md#inventorydatacentersget) | **GET** /1.0.0/inventory/datacenters | Get list of all the data centers
 
 
-<a name="100inventorydatacentersget"></a>
-# **100InventoryDatacentersGet**
-> List<Model100InventoryDatacentersResponse> 100InventoryDatacentersGet ()
+<a name="inventorydatacentersget"></a>
+# **InventoryDatacentersGet**
+> List<InventoryDatacentersResponse> InventoryDatacentersGet ()
 
 Get list of all the data centers
 
@@ -20,27 +20,30 @@ Get list of all the data centers
 using System;
 using System.Diagnostics;
 using IO.TelstraTPN.Api;
-using IO.TelstraTPN.Client;
+using IO.TelstraTPN;
 using IO.TelstraTPN.Model;
 
 namespace Example
 {
-    public class 100InventoryDatacentersGetExample
+    public class InventoryDatacentersGetExample
     {
         public void main()
         {
             
+            // Configure OAuth2 access token for authorization: auth
+            Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
+
             var apiInstance = new DatacentresApi();
 
             try
             {
                 // Get list of all the data centers
-                List&lt;Model100InventoryDatacentersResponse&gt; result = apiInstance.100InventoryDatacentersGet();
+                List&lt;InventoryDatacentersResponse&gt; result = apiInstance.InventoryDatacentersGet();
                 Debug.WriteLine(result);
             }
             catch (Exception e)
             {
-                Debug.Print("Exception when calling DatacentresApi.100InventoryDatacentersGet: " + e.Message );
+                Debug.Print("Exception when calling DatacentresApi.InventoryDatacentersGet: " + e.Message );
             }
         }
     }
@@ -52,11 +55,11 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**List<Model100InventoryDatacentersResponse>**](Model100InventoryDatacentersResponse.md)
+[**List<InventoryDatacentersResponse>**](InventoryDatacentersResponse.md)
 
 ### Authorization
 
-No authorization required
+[auth](../README.md#auth)
 
 ### HTTP request headers
 

@@ -1,17 +1,17 @@
-# IO.TelstraTPN..ContractsApi
+# IO.TelstraTPN.Api.ContractsApi
 
 All URIs are relative to *https://penapi.pacnetconnect.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**100InventoryLinksContractByLinkidAndContractidGet**](ContractsApi.md#100inventorylinkscontractbylinkidandcontractidget) | **GET** /1.0.0/inventory/links/{linkid}/contract/{contractid} | Get active Contract by ContractID
-[**100InventoryLinksContractByLinkidAndContractidPut**](ContractsApi.md#100inventorylinkscontractbylinkidandcontractidput) | **PUT** /1.0.0/inventory/links/{linkid}/contract/{contractid} | Update active Contract by ContractID
-[**100InventoryLinksContractByLinkidPost**](ContractsApi.md#100inventorylinkscontractbylinkidpost) | **POST** /1.0.0/inventory/links/{linkid}/contract | Create new Contract on specified link
+[**InventoryLinksContractByLinkidAndContractidGet**](ContractsApi.md#inventorylinkscontractbylinkidandcontractidget) | **GET** /1.0.0/inventory/links/{linkid}/contract/{contractid} | Get active Contract by ContractID
+[**InventoryLinksContractByLinkidAndContractidPut**](ContractsApi.md#inventorylinkscontractbylinkidandcontractidput) | **PUT** /1.0.0/inventory/links/{linkid}/contract/{contractid} | Update active Contract by ContractID
+[**InventoryLinksContractByLinkidPost**](ContractsApi.md#inventorylinkscontractbylinkidpost) | **POST** /1.0.0/inventory/links/{linkid}/contract | Create new Contract on specified link
 
 
-<a name="100inventorylinkscontractbylinkidandcontractidget"></a>
-# **100InventoryLinksContractByLinkidAndContractidGet**
-> Model100InventoryLinksContractResponse 100InventoryLinksContractByLinkidAndContractidGet (string linkid, string contractid)
+<a name="inventorylinkscontractbylinkidandcontractidget"></a>
+# **InventoryLinksContractByLinkidAndContractidGet**
+> InventoryLinksContractResponse InventoryLinksContractByLinkidAndContractidGet (string linkid, string contractid)
 
 Get active Contract by ContractID
 
@@ -22,16 +22,19 @@ Get active Contract by ContractID
 using System;
 using System.Diagnostics;
 using IO.TelstraTPN.Api;
-using IO.TelstraTPN.Client;
+using IO.TelstraTPN;
 using IO.TelstraTPN.Model;
 
 namespace Example
 {
-    public class 100InventoryLinksContractByLinkidAndContractidGetExample
+    public class InventoryLinksContractByLinkidAndContractidGetExample
     {
         public void main()
         {
             
+            // Configure OAuth2 access token for authorization: auth
+            Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
+
             var apiInstance = new ContractsApi();
             var linkid = linkid_example;  // string | Unique identifier representing a specific link
             var contractid = contractid_example;  // string | Unique identifier representing a specific contract
@@ -39,12 +42,12 @@ namespace Example
             try
             {
                 // Get active Contract by ContractID
-                Model100InventoryLinksContractResponse result = apiInstance.100InventoryLinksContractByLinkidAndContractidGet(linkid, contractid);
+                InventoryLinksContractResponse result = apiInstance.InventoryLinksContractByLinkidAndContractidGet(linkid, contractid);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
             {
-                Debug.Print("Exception when calling ContractsApi.100InventoryLinksContractByLinkidAndContractidGet: " + e.Message );
+                Debug.Print("Exception when calling ContractsApi.InventoryLinksContractByLinkidAndContractidGet: " + e.Message );
             }
         }
     }
@@ -60,11 +63,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Model100InventoryLinksContractResponse**](Model100InventoryLinksContractResponse.md)
+[**InventoryLinksContractResponse**](InventoryLinksContractResponse.md)
 
 ### Authorization
 
-No authorization required
+[auth](../README.md#auth)
 
 ### HTTP request headers
 
@@ -73,9 +76,9 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="100inventorylinkscontractbylinkidandcontractidput"></a>
-# **100InventoryLinksContractByLinkidAndContractidPut**
-> Model100InventoryLinksContractResponse33 100InventoryLinksContractByLinkidAndContractidPut (string linkid, string contractid, Model100InventoryLinksContractRequest body)
+<a name="inventorylinkscontractbylinkidandcontractidput"></a>
+# **InventoryLinksContractByLinkidAndContractidPut**
+> InventoryLinksContractResponse33 InventoryLinksContractByLinkidAndContractidPut (string linkid, string contractid, InventoryLinksContractRequest body)
 
 Update active Contract by ContractID
 
@@ -86,30 +89,33 @@ Update active Contract by ContractID
 using System;
 using System.Diagnostics;
 using IO.TelstraTPN.Api;
-using IO.TelstraTPN.Client;
+using IO.TelstraTPN;
 using IO.TelstraTPN.Model;
 
 namespace Example
 {
-    public class 100InventoryLinksContractByLinkidAndContractidPutExample
+    public class InventoryLinksContractByLinkidAndContractidPutExample
     {
         public void main()
         {
             
+            // Configure OAuth2 access token for authorization: auth
+            Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
+
             var apiInstance = new ContractsApi();
             var linkid = linkid_example;  // string | Unique identifier representing a specific link
             var contractid = contractid_example;  // string | Unique identifier representing a specific contract
-            var body = new Model100InventoryLinksContractRequest(); // Model100InventoryLinksContractRequest |  (optional) 
+            var body = new InventoryLinksContractRequest(); // InventoryLinksContractRequest |  (optional) 
 
             try
             {
                 // Update active Contract by ContractID
-                Model100InventoryLinksContractResponse33 result = apiInstance.100InventoryLinksContractByLinkidAndContractidPut(linkid, contractid, body);
+                InventoryLinksContractResponse33 result = apiInstance.InventoryLinksContractByLinkidAndContractidPut(linkid, contractid, body);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
             {
-                Debug.Print("Exception when calling ContractsApi.100InventoryLinksContractByLinkidAndContractidPut: " + e.Message );
+                Debug.Print("Exception when calling ContractsApi.InventoryLinksContractByLinkidAndContractidPut: " + e.Message );
             }
         }
     }
@@ -122,15 +128,15 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **linkid** | **string**| Unique identifier representing a specific link | 
  **contractid** | **string**| Unique identifier representing a specific contract | 
- **body** | [**Model100InventoryLinksContractRequest**](Model100InventoryLinksContractRequest.md)|  | [optional] 
+ **body** | [**InventoryLinksContractRequest**](InventoryLinksContractRequest.md)|  | [optional] 
 
 ### Return type
 
-[**Model100InventoryLinksContractResponse33**](Model100InventoryLinksContractResponse33.md)
+[**InventoryLinksContractResponse33**](InventoryLinksContractResponse33.md)
 
 ### Authorization
 
-No authorization required
+[auth](../README.md#auth)
 
 ### HTTP request headers
 
@@ -139,9 +145,9 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="100inventorylinkscontractbylinkidpost"></a>
-# **100InventoryLinksContractByLinkidPost**
-> Model100InventoryLinksContractResponse38 100InventoryLinksContractByLinkidPost (string linkid, Model100InventoryLinksContractRequest37 body)
+<a name="inventorylinkscontractbylinkidpost"></a>
+# **InventoryLinksContractByLinkidPost**
+> List<InventoryLinksContractResponse38> InventoryLinksContractByLinkidPost (string linkid, InventoryLinksContractRequest37 body)
 
 Create new Contract on specified link
 
@@ -152,29 +158,32 @@ Create new Contract on specified link
 using System;
 using System.Diagnostics;
 using IO.TelstraTPN.Api;
-using IO.TelstraTPN.Client;
+using IO.TelstraTPN;
 using IO.TelstraTPN.Model;
 
 namespace Example
 {
-    public class 100InventoryLinksContractByLinkidPostExample
+    public class InventoryLinksContractByLinkidPostExample
     {
         public void main()
         {
             
+            // Configure OAuth2 access token for authorization: auth
+            Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
+
             var apiInstance = new ContractsApi();
             var linkid = linkid_example;  // string | Unique identifier representing a specific link
-            var body = new Model100InventoryLinksContractRequest37(); // Model100InventoryLinksContractRequest37 |  (optional) 
+            var body = new InventoryLinksContractRequest37(); // InventoryLinksContractRequest37 |  (optional) 
 
             try
             {
                 // Create new Contract on specified link
-                Model100InventoryLinksContractResponse38 result = apiInstance.100InventoryLinksContractByLinkidPost(linkid, body);
+                List&lt;InventoryLinksContractResponse38&gt; result = apiInstance.InventoryLinksContractByLinkidPost(linkid, body);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
             {
-                Debug.Print("Exception when calling ContractsApi.100InventoryLinksContractByLinkidPost: " + e.Message );
+                Debug.Print("Exception when calling ContractsApi.InventoryLinksContractByLinkidPost: " + e.Message );
             }
         }
     }
@@ -186,15 +195,15 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **linkid** | **string**| Unique identifier representing a specific link | 
- **body** | [**Model100InventoryLinksContractRequest37**](Model100InventoryLinksContractRequest37.md)|  | [optional] 
+ **body** | [**InventoryLinksContractRequest37**](InventoryLinksContractRequest37.md)|  | [optional] 
 
 ### Return type
 
-[**Model100InventoryLinksContractResponse38**](Model100InventoryLinksContractResponse38.md)
+[**List<InventoryLinksContractResponse38>**](InventoryLinksContractResponse38.md)
 
 ### Authorization
 
-No authorization required
+[auth](../README.md#auth)
 
 ### HTTP request headers
 

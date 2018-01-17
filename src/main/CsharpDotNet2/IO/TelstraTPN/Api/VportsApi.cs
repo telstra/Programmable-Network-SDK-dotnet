@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 using RestSharp;
-using IO.TelstraTPN.Client;
+using IO.TelstraTPN;
 using IO.TelstraTPN.Model;
 
 namespace IO.TelstraTPN.Api
@@ -15,20 +15,20 @@ namespace IO.TelstraTPN.Api
         /// Create VPort for physical endpoint Create VPort representing a VLAN on a Physical Ethernet Port
         /// </summary>
         /// <param name="body"></param>
-        /// <returns>Model100InventoryRegularvportResponse</returns>
-        Model100InventoryRegularvportResponse 100InventoryRegularvportPost (Model100InventoryRegularvportRequest body);
+        /// <returns>InventoryRegularvportResponse</returns>
+        InventoryRegularvportResponse InventoryRegularvportPost (InventoryRegularvportRequest body);
         /// <summary>
         /// Create VNF VPort Create VNF VPort
         /// </summary>
         /// <param name="body"></param>
-        /// <returns>Model100InventoryVnfVportResponse</returns>
-        Model100InventoryVnfVportResponse 100InventoryVnfVportPost (Model100InventoryVnfVportRequest body);
+        /// <returns>InventoryVnfVportResponse</returns>
+        InventoryVnfVportResponse InventoryVnfVportPost (InventoryVnfVportRequest body);
         /// <summary>
         /// Get information about the specified VPort Get information about the specified VPort
         /// </summary>
         /// <param name="vportuuid">Unique identifier representing a specific virtual port</param>
-        /// <returns>EndpointPort</returns>
-        EndpointPort 100InventoryVportByVportuuidGet (string vportuuid);
+        /// <returns>List&lt;EndpointPort&gt;</returns>
+        List<EndpointPort> InventoryVportByVportuuidGet (string vportuuid);
     }
   
     /// <summary>
@@ -88,8 +88,8 @@ namespace IO.TelstraTPN.Api
         /// Create VPort for physical endpoint Create VPort representing a VLAN on a Physical Ethernet Port
         /// </summary>
         /// <param name="body"></param> 
-        /// <returns>Model100InventoryRegularvportResponse</returns>            
-        public Model100InventoryRegularvportResponse 100InventoryRegularvportPost (Model100InventoryRegularvportRequest body)
+        /// <returns>InventoryRegularvportResponse</returns>            
+        public InventoryRegularvportResponse InventoryRegularvportPost (InventoryRegularvportRequest body)
         {
             
     
@@ -105,25 +105,25 @@ namespace IO.TelstraTPN.Api
                                                 postBody = ApiClient.Serialize(body); // http body (model) parameter
     
             // authentication setting, if any
-            String[] authSettings = new String[] {  };
+            String[] authSettings = new String[] { "auth" };
     
             // make the HTTP request
             IRestResponse response = (IRestResponse) ApiClient.CallApi(path, Method.POST, queryParams, postBody, headerParams, formParams, fileParams, authSettings);
     
             if (((int)response.StatusCode) >= 400)
-                throw new ApiException ((int)response.StatusCode, "Error calling 100InventoryRegularvportPost: " + response.Content, response.Content);
+                throw new ApiException ((int)response.StatusCode, "Error calling InventoryRegularvportPost: " + response.Content, response.Content);
             else if (((int)response.StatusCode) == 0)
-                throw new ApiException ((int)response.StatusCode, "Error calling 100InventoryRegularvportPost: " + response.ErrorMessage, response.ErrorMessage);
+                throw new ApiException ((int)response.StatusCode, "Error calling InventoryRegularvportPost: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (Model100InventoryRegularvportResponse) ApiClient.Deserialize(response.Content, typeof(Model100InventoryRegularvportResponse), response.Headers);
+            return (InventoryRegularvportResponse) ApiClient.Deserialize(response.Content, typeof(InventoryRegularvportResponse), response.Headers);
         }
     
         /// <summary>
         /// Create VNF VPort Create VNF VPort
         /// </summary>
         /// <param name="body"></param> 
-        /// <returns>Model100InventoryVnfVportResponse</returns>            
-        public Model100InventoryVnfVportResponse 100InventoryVnfVportPost (Model100InventoryVnfVportRequest body)
+        /// <returns>InventoryVnfVportResponse</returns>            
+        public InventoryVnfVportResponse InventoryVnfVportPost (InventoryVnfVportRequest body)
         {
             
     
@@ -139,29 +139,29 @@ namespace IO.TelstraTPN.Api
                                                 postBody = ApiClient.Serialize(body); // http body (model) parameter
     
             // authentication setting, if any
-            String[] authSettings = new String[] {  };
+            String[] authSettings = new String[] { "auth" };
     
             // make the HTTP request
             IRestResponse response = (IRestResponse) ApiClient.CallApi(path, Method.POST, queryParams, postBody, headerParams, formParams, fileParams, authSettings);
     
             if (((int)response.StatusCode) >= 400)
-                throw new ApiException ((int)response.StatusCode, "Error calling 100InventoryVnfVportPost: " + response.Content, response.Content);
+                throw new ApiException ((int)response.StatusCode, "Error calling InventoryVnfVportPost: " + response.Content, response.Content);
             else if (((int)response.StatusCode) == 0)
-                throw new ApiException ((int)response.StatusCode, "Error calling 100InventoryVnfVportPost: " + response.ErrorMessage, response.ErrorMessage);
+                throw new ApiException ((int)response.StatusCode, "Error calling InventoryVnfVportPost: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (Model100InventoryVnfVportResponse) ApiClient.Deserialize(response.Content, typeof(Model100InventoryVnfVportResponse), response.Headers);
+            return (InventoryVnfVportResponse) ApiClient.Deserialize(response.Content, typeof(InventoryVnfVportResponse), response.Headers);
         }
     
         /// <summary>
         /// Get information about the specified VPort Get information about the specified VPort
         /// </summary>
         /// <param name="vportuuid">Unique identifier representing a specific virtual port</param> 
-        /// <returns>EndpointPort</returns>            
-        public EndpointPort 100InventoryVportByVportuuidGet (string vportuuid)
+        /// <returns>List&lt;EndpointPort&gt;</returns>            
+        public List<EndpointPort> InventoryVportByVportuuidGet (string vportuuid)
         {
             
             // verify the required parameter 'vportuuid' is set
-            if (vportuuid == null) throw new ApiException(400, "Missing required parameter 'vportuuid' when calling 100InventoryVportByVportuuidGet");
+            if (vportuuid == null) throw new ApiException(400, "Missing required parameter 'vportuuid' when calling InventoryVportByVportuuidGet");
             
     
             var path = "/1.0.0/inventory/vport/{vportuuid}";
@@ -176,17 +176,17 @@ namespace IO.TelstraTPN.Api
     
                                                     
             // authentication setting, if any
-            String[] authSettings = new String[] {  };
+            String[] authSettings = new String[] { "auth" };
     
             // make the HTTP request
             IRestResponse response = (IRestResponse) ApiClient.CallApi(path, Method.GET, queryParams, postBody, headerParams, formParams, fileParams, authSettings);
     
             if (((int)response.StatusCode) >= 400)
-                throw new ApiException ((int)response.StatusCode, "Error calling 100InventoryVportByVportuuidGet: " + response.Content, response.Content);
+                throw new ApiException ((int)response.StatusCode, "Error calling InventoryVportByVportuuidGet: " + response.Content, response.Content);
             else if (((int)response.StatusCode) == 0)
-                throw new ApiException ((int)response.StatusCode, "Error calling 100InventoryVportByVportuuidGet: " + response.ErrorMessage, response.ErrorMessage);
+                throw new ApiException ((int)response.StatusCode, "Error calling InventoryVportByVportuuidGet: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (EndpointPort) ApiClient.Deserialize(response.Content, typeof(EndpointPort), response.Headers);
+            return (List<EndpointPort>) ApiClient.Deserialize(response.Content, typeof(List<EndpointPort>), response.Headers);
         }
     
     }

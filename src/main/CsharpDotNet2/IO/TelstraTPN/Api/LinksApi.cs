@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 using RestSharp;
-using IO.TelstraTPN.Client;
+using IO.TelstraTPN;
 using IO.TelstraTPN.Model;
 
 namespace IO.TelstraTPN.Api
@@ -15,26 +15,26 @@ namespace IO.TelstraTPN.Api
         /// Create Link and initial Contract Create Link and initial Contract
         /// </summary>
         /// <param name="body"></param>
-        /// <returns>Model100InventoryLinkResponse</returns>
-        Model100InventoryLinkResponse 100InventoryLinkPost (Model100InventoryLinkRequest body);
+        /// <returns>InventoryLinkResponse</returns>
+        InventoryLinkResponse InventoryLinkPost (InventoryLinkRequest body);
         /// <summary>
         /// Get details of specified link Get details of specified link
         /// </summary>
         /// <param name="linkid">Unique identifier representing a specific link</param>
-        /// <returns>Model100InventoryLinksResponse</returns>
-        Model100InventoryLinksResponse 100InventoryLinksByLinkidGet (string linkid);
+        /// <returns>InventoryLinksResponse</returns>
+        InventoryLinksResponse InventoryLinksByLinkidGet (string linkid);
         /// <summary>
         /// Get active Links Get active Links
         /// </summary>
         /// <param name="customeruuid">Unique identifier representing a specific customer</param>
         /// <returns>List&lt;Link&gt;</returns>
-        List<Link> 100InventoryLinksCustomerByCustomeruuidGet (string customeruuid);
+        List<Link> InventoryLinksCustomerByCustomeruuidGet (string customeruuid);
         /// <summary>
         /// Get Link history Get Link history
         /// </summary>
         /// <param name="linkid">Unique identifier representing a specific link</param>
-        /// <returns>Model100InventoryLinksHistoryResponse</returns>
-        Model100InventoryLinksHistoryResponse 100InventoryLinksHistoryByLinkidGet (string linkid);
+        /// <returns>InventoryLinksHistoryResponse</returns>
+        InventoryLinksHistoryResponse InventoryLinksHistoryByLinkidGet (string linkid);
     }
   
     /// <summary>
@@ -94,8 +94,8 @@ namespace IO.TelstraTPN.Api
         /// Create Link and initial Contract Create Link and initial Contract
         /// </summary>
         /// <param name="body"></param> 
-        /// <returns>Model100InventoryLinkResponse</returns>            
-        public Model100InventoryLinkResponse 100InventoryLinkPost (Model100InventoryLinkRequest body)
+        /// <returns>InventoryLinkResponse</returns>            
+        public InventoryLinkResponse InventoryLinkPost (InventoryLinkRequest body)
         {
             
     
@@ -111,29 +111,29 @@ namespace IO.TelstraTPN.Api
                                                 postBody = ApiClient.Serialize(body); // http body (model) parameter
     
             // authentication setting, if any
-            String[] authSettings = new String[] {  };
+            String[] authSettings = new String[] { "auth" };
     
             // make the HTTP request
             IRestResponse response = (IRestResponse) ApiClient.CallApi(path, Method.POST, queryParams, postBody, headerParams, formParams, fileParams, authSettings);
     
             if (((int)response.StatusCode) >= 400)
-                throw new ApiException ((int)response.StatusCode, "Error calling 100InventoryLinkPost: " + response.Content, response.Content);
+                throw new ApiException ((int)response.StatusCode, "Error calling InventoryLinkPost: " + response.Content, response.Content);
             else if (((int)response.StatusCode) == 0)
-                throw new ApiException ((int)response.StatusCode, "Error calling 100InventoryLinkPost: " + response.ErrorMessage, response.ErrorMessage);
+                throw new ApiException ((int)response.StatusCode, "Error calling InventoryLinkPost: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (Model100InventoryLinkResponse) ApiClient.Deserialize(response.Content, typeof(Model100InventoryLinkResponse), response.Headers);
+            return (InventoryLinkResponse) ApiClient.Deserialize(response.Content, typeof(InventoryLinkResponse), response.Headers);
         }
     
         /// <summary>
         /// Get details of specified link Get details of specified link
         /// </summary>
         /// <param name="linkid">Unique identifier representing a specific link</param> 
-        /// <returns>Model100InventoryLinksResponse</returns>            
-        public Model100InventoryLinksResponse 100InventoryLinksByLinkidGet (string linkid)
+        /// <returns>InventoryLinksResponse</returns>            
+        public InventoryLinksResponse InventoryLinksByLinkidGet (string linkid)
         {
             
             // verify the required parameter 'linkid' is set
-            if (linkid == null) throw new ApiException(400, "Missing required parameter 'linkid' when calling 100InventoryLinksByLinkidGet");
+            if (linkid == null) throw new ApiException(400, "Missing required parameter 'linkid' when calling InventoryLinksByLinkidGet");
             
     
             var path = "/1.0.0/inventory/links/{linkid}";
@@ -148,17 +148,17 @@ namespace IO.TelstraTPN.Api
     
                                                     
             // authentication setting, if any
-            String[] authSettings = new String[] {  };
+            String[] authSettings = new String[] { "auth" };
     
             // make the HTTP request
             IRestResponse response = (IRestResponse) ApiClient.CallApi(path, Method.GET, queryParams, postBody, headerParams, formParams, fileParams, authSettings);
     
             if (((int)response.StatusCode) >= 400)
-                throw new ApiException ((int)response.StatusCode, "Error calling 100InventoryLinksByLinkidGet: " + response.Content, response.Content);
+                throw new ApiException ((int)response.StatusCode, "Error calling InventoryLinksByLinkidGet: " + response.Content, response.Content);
             else if (((int)response.StatusCode) == 0)
-                throw new ApiException ((int)response.StatusCode, "Error calling 100InventoryLinksByLinkidGet: " + response.ErrorMessage, response.ErrorMessage);
+                throw new ApiException ((int)response.StatusCode, "Error calling InventoryLinksByLinkidGet: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (Model100InventoryLinksResponse) ApiClient.Deserialize(response.Content, typeof(Model100InventoryLinksResponse), response.Headers);
+            return (InventoryLinksResponse) ApiClient.Deserialize(response.Content, typeof(InventoryLinksResponse), response.Headers);
         }
     
         /// <summary>
@@ -166,11 +166,11 @@ namespace IO.TelstraTPN.Api
         /// </summary>
         /// <param name="customeruuid">Unique identifier representing a specific customer</param> 
         /// <returns>List&lt;Link&gt;</returns>            
-        public List<Link> 100InventoryLinksCustomerByCustomeruuidGet (string customeruuid)
+        public List<Link> InventoryLinksCustomerByCustomeruuidGet (string customeruuid)
         {
             
             // verify the required parameter 'customeruuid' is set
-            if (customeruuid == null) throw new ApiException(400, "Missing required parameter 'customeruuid' when calling 100InventoryLinksCustomerByCustomeruuidGet");
+            if (customeruuid == null) throw new ApiException(400, "Missing required parameter 'customeruuid' when calling InventoryLinksCustomerByCustomeruuidGet");
             
     
             var path = "/1.0.0/inventory/links/customer/{customeruuid}";
@@ -185,15 +185,15 @@ namespace IO.TelstraTPN.Api
     
                                                     
             // authentication setting, if any
-            String[] authSettings = new String[] {  };
+            String[] authSettings = new String[] { "auth" };
     
             // make the HTTP request
             IRestResponse response = (IRestResponse) ApiClient.CallApi(path, Method.GET, queryParams, postBody, headerParams, formParams, fileParams, authSettings);
     
             if (((int)response.StatusCode) >= 400)
-                throw new ApiException ((int)response.StatusCode, "Error calling 100InventoryLinksCustomerByCustomeruuidGet: " + response.Content, response.Content);
+                throw new ApiException ((int)response.StatusCode, "Error calling InventoryLinksCustomerByCustomeruuidGet: " + response.Content, response.Content);
             else if (((int)response.StatusCode) == 0)
-                throw new ApiException ((int)response.StatusCode, "Error calling 100InventoryLinksCustomerByCustomeruuidGet: " + response.ErrorMessage, response.ErrorMessage);
+                throw new ApiException ((int)response.StatusCode, "Error calling InventoryLinksCustomerByCustomeruuidGet: " + response.ErrorMessage, response.ErrorMessage);
     
             return (List<Link>) ApiClient.Deserialize(response.Content, typeof(List<Link>), response.Headers);
         }
@@ -202,12 +202,12 @@ namespace IO.TelstraTPN.Api
         /// Get Link history Get Link history
         /// </summary>
         /// <param name="linkid">Unique identifier representing a specific link</param> 
-        /// <returns>Model100InventoryLinksHistoryResponse</returns>            
-        public Model100InventoryLinksHistoryResponse 100InventoryLinksHistoryByLinkidGet (string linkid)
+        /// <returns>InventoryLinksHistoryResponse</returns>            
+        public InventoryLinksHistoryResponse InventoryLinksHistoryByLinkidGet (string linkid)
         {
             
             // verify the required parameter 'linkid' is set
-            if (linkid == null) throw new ApiException(400, "Missing required parameter 'linkid' when calling 100InventoryLinksHistoryByLinkidGet");
+            if (linkid == null) throw new ApiException(400, "Missing required parameter 'linkid' when calling InventoryLinksHistoryByLinkidGet");
             
     
             var path = "/1.0.0/inventory/links/history/{linkid}";
@@ -222,17 +222,17 @@ namespace IO.TelstraTPN.Api
     
                                                     
             // authentication setting, if any
-            String[] authSettings = new String[] {  };
+            String[] authSettings = new String[] { "auth" };
     
             // make the HTTP request
             IRestResponse response = (IRestResponse) ApiClient.CallApi(path, Method.GET, queryParams, postBody, headerParams, formParams, fileParams, authSettings);
     
             if (((int)response.StatusCode) >= 400)
-                throw new ApiException ((int)response.StatusCode, "Error calling 100InventoryLinksHistoryByLinkidGet: " + response.Content, response.Content);
+                throw new ApiException ((int)response.StatusCode, "Error calling InventoryLinksHistoryByLinkidGet: " + response.Content, response.Content);
             else if (((int)response.StatusCode) == 0)
-                throw new ApiException ((int)response.StatusCode, "Error calling 100InventoryLinksHistoryByLinkidGet: " + response.ErrorMessage, response.ErrorMessage);
+                throw new ApiException ((int)response.StatusCode, "Error calling InventoryLinksHistoryByLinkidGet: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (Model100InventoryLinksHistoryResponse) ApiClient.Deserialize(response.Content, typeof(Model100InventoryLinksHistoryResponse), response.Headers);
+            return (InventoryLinksHistoryResponse) ApiClient.Deserialize(response.Content, typeof(InventoryLinksHistoryResponse), response.Headers);
         }
     
     }

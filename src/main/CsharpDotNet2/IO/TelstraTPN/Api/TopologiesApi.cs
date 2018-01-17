@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 using RestSharp;
-using IO.TelstraTPN.Client;
+using IO.TelstraTPN;
 using IO.TelstraTPN.Model;
 
 namespace IO.TelstraTPN.Api

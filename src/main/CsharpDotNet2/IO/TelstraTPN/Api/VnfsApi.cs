@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 using RestSharp;
-using IO.TelstraTPN.Client;
+using IO.TelstraTPN;
 using IO.TelstraTPN.Model;
 
 namespace IO.TelstraTPN.Api
@@ -14,8 +14,8 @@ namespace IO.TelstraTPN.Api
         /// <summary>
         /// List images in the Marketplace List images in the Marketplace
         /// </summary>
-        /// <returns>Model100MarketplaceImageResponse</returns>
-        Model100MarketplaceImageResponse 100MarketplaceImageGet ();
+        /// <returns>MarketplaceImageResponse</returns>
+        MarketplaceImageResponse MarketplaceImageGet ();
     }
   
     /// <summary>
@@ -74,8 +74,8 @@ namespace IO.TelstraTPN.Api
         /// <summary>
         /// List images in the Marketplace List images in the Marketplace
         /// </summary>
-        /// <returns>Model100MarketplaceImageResponse</returns>            
-        public Model100MarketplaceImageResponse 100MarketplaceImageGet ()
+        /// <returns>MarketplaceImageResponse</returns>            
+        public MarketplaceImageResponse MarketplaceImageGet ()
         {
             
     
@@ -90,17 +90,17 @@ namespace IO.TelstraTPN.Api
     
                                                     
             // authentication setting, if any
-            String[] authSettings = new String[] {  };
+            String[] authSettings = new String[] { "auth" };
     
             // make the HTTP request
             IRestResponse response = (IRestResponse) ApiClient.CallApi(path, Method.GET, queryParams, postBody, headerParams, formParams, fileParams, authSettings);
     
             if (((int)response.StatusCode) >= 400)
-                throw new ApiException ((int)response.StatusCode, "Error calling 100MarketplaceImageGet: " + response.Content, response.Content);
+                throw new ApiException ((int)response.StatusCode, "Error calling MarketplaceImageGet: " + response.Content, response.Content);
             else if (((int)response.StatusCode) == 0)
-                throw new ApiException ((int)response.StatusCode, "Error calling 100MarketplaceImageGet: " + response.ErrorMessage, response.ErrorMessage);
+                throw new ApiException ((int)response.StatusCode, "Error calling MarketplaceImageGet: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (Model100MarketplaceImageResponse) ApiClient.Deserialize(response.Content, typeof(Model100MarketplaceImageResponse), response.Headers);
+            return (MarketplaceImageResponse) ApiClient.Deserialize(response.Content, typeof(MarketplaceImageResponse), response.Headers);
         }
     
     }

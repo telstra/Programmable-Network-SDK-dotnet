@@ -1,17 +1,17 @@
-# IO.TelstraTPN..VportsApi
+# IO.TelstraTPN.Api.VportsApi
 
 All URIs are relative to *https://penapi.pacnetconnect.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**100InventoryRegularvportPost**](VportsApi.md#100inventoryregularvportpost) | **POST** /1.0.0/inventory/regularvport | Create VPort for physical endpoint
-[**100InventoryVnfVportPost**](VportsApi.md#100inventoryvnfvportpost) | **POST** /1.0.0/inventory/vnf/vport | Create VNF VPort
-[**100InventoryVportByVportuuidGet**](VportsApi.md#100inventoryvportbyvportuuidget) | **GET** /1.0.0/inventory/vport/{vportuuid} | Get information about the specified VPort
+[**InventoryRegularvportPost**](VportsApi.md#inventoryregularvportpost) | **POST** /1.0.0/inventory/regularvport | Create VPort for physical endpoint
+[**InventoryVnfVportPost**](VportsApi.md#inventoryvnfvportpost) | **POST** /1.0.0/inventory/vnf/vport | Create VNF VPort
+[**InventoryVportByVportuuidGet**](VportsApi.md#inventoryvportbyvportuuidget) | **GET** /1.0.0/inventory/vport/{vportuuid} | Get information about the specified VPort
 
 
-<a name="100inventoryregularvportpost"></a>
-# **100InventoryRegularvportPost**
-> Model100InventoryRegularvportResponse 100InventoryRegularvportPost (Model100InventoryRegularvportRequest body)
+<a name="inventoryregularvportpost"></a>
+# **InventoryRegularvportPost**
+> InventoryRegularvportResponse InventoryRegularvportPost (InventoryRegularvportRequest body)
 
 Create VPort for physical endpoint
 
@@ -22,28 +22,31 @@ Create VPort representing a VLAN on a Physical Ethernet Port
 using System;
 using System.Diagnostics;
 using IO.TelstraTPN.Api;
-using IO.TelstraTPN.Client;
+using IO.TelstraTPN;
 using IO.TelstraTPN.Model;
 
 namespace Example
 {
-    public class 100InventoryRegularvportPostExample
+    public class InventoryRegularvportPostExample
     {
         public void main()
         {
             
+            // Configure OAuth2 access token for authorization: auth
+            Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
+
             var apiInstance = new VportsApi();
-            var body = new Model100InventoryRegularvportRequest(); // Model100InventoryRegularvportRequest |  (optional) 
+            var body = new InventoryRegularvportRequest(); // InventoryRegularvportRequest |  (optional) 
 
             try
             {
                 // Create VPort for physical endpoint
-                Model100InventoryRegularvportResponse result = apiInstance.100InventoryRegularvportPost(body);
+                InventoryRegularvportResponse result = apiInstance.InventoryRegularvportPost(body);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
             {
-                Debug.Print("Exception when calling VportsApi.100InventoryRegularvportPost: " + e.Message );
+                Debug.Print("Exception when calling VportsApi.InventoryRegularvportPost: " + e.Message );
             }
         }
     }
@@ -54,15 +57,15 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**Model100InventoryRegularvportRequest**](Model100InventoryRegularvportRequest.md)|  | [optional] 
+ **body** | [**InventoryRegularvportRequest**](InventoryRegularvportRequest.md)|  | [optional] 
 
 ### Return type
 
-[**Model100InventoryRegularvportResponse**](Model100InventoryRegularvportResponse.md)
+[**InventoryRegularvportResponse**](InventoryRegularvportResponse.md)
 
 ### Authorization
 
-No authorization required
+[auth](../README.md#auth)
 
 ### HTTP request headers
 
@@ -71,9 +74,9 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="100inventoryvnfvportpost"></a>
-# **100InventoryVnfVportPost**
-> Model100InventoryVnfVportResponse 100InventoryVnfVportPost (Model100InventoryVnfVportRequest body)
+<a name="inventoryvnfvportpost"></a>
+# **InventoryVnfVportPost**
+> InventoryVnfVportResponse InventoryVnfVportPost (InventoryVnfVportRequest body)
 
 Create VNF VPort
 
@@ -84,28 +87,31 @@ Create VNF VPort
 using System;
 using System.Diagnostics;
 using IO.TelstraTPN.Api;
-using IO.TelstraTPN.Client;
+using IO.TelstraTPN;
 using IO.TelstraTPN.Model;
 
 namespace Example
 {
-    public class 100InventoryVnfVportPostExample
+    public class InventoryVnfVportPostExample
     {
         public void main()
         {
             
+            // Configure OAuth2 access token for authorization: auth
+            Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
+
             var apiInstance = new VportsApi();
-            var body = new Model100InventoryVnfVportRequest(); // Model100InventoryVnfVportRequest |  (optional) 
+            var body = new InventoryVnfVportRequest(); // InventoryVnfVportRequest |  (optional) 
 
             try
             {
                 // Create VNF VPort
-                Model100InventoryVnfVportResponse result = apiInstance.100InventoryVnfVportPost(body);
+                InventoryVnfVportResponse result = apiInstance.InventoryVnfVportPost(body);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
             {
-                Debug.Print("Exception when calling VportsApi.100InventoryVnfVportPost: " + e.Message );
+                Debug.Print("Exception when calling VportsApi.InventoryVnfVportPost: " + e.Message );
             }
         }
     }
@@ -116,15 +122,15 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**Model100InventoryVnfVportRequest**](Model100InventoryVnfVportRequest.md)|  | [optional] 
+ **body** | [**InventoryVnfVportRequest**](InventoryVnfVportRequest.md)|  | [optional] 
 
 ### Return type
 
-[**Model100InventoryVnfVportResponse**](Model100InventoryVnfVportResponse.md)
+[**InventoryVnfVportResponse**](InventoryVnfVportResponse.md)
 
 ### Authorization
 
-No authorization required
+[auth](../README.md#auth)
 
 ### HTTP request headers
 
@@ -133,9 +139,9 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="100inventoryvportbyvportuuidget"></a>
-# **100InventoryVportByVportuuidGet**
-> EndpointPort 100InventoryVportByVportuuidGet (string vportuuid)
+<a name="inventoryvportbyvportuuidget"></a>
+# **InventoryVportByVportuuidGet**
+> List<EndpointPort> InventoryVportByVportuuidGet (string vportuuid)
 
 Get information about the specified VPort
 
@@ -146,28 +152,31 @@ Get information about the specified VPort
 using System;
 using System.Diagnostics;
 using IO.TelstraTPN.Api;
-using IO.TelstraTPN.Client;
+using IO.TelstraTPN;
 using IO.TelstraTPN.Model;
 
 namespace Example
 {
-    public class 100InventoryVportByVportuuidGetExample
+    public class InventoryVportByVportuuidGetExample
     {
         public void main()
         {
             
+            // Configure OAuth2 access token for authorization: auth
+            Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
+
             var apiInstance = new VportsApi();
             var vportuuid = vportuuid_example;  // string | Unique identifier representing a specific virtual port
 
             try
             {
                 // Get information about the specified VPort
-                EndpointPort result = apiInstance.100InventoryVportByVportuuidGet(vportuuid);
+                List&lt;EndpointPort&gt; result = apiInstance.InventoryVportByVportuuidGet(vportuuid);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
             {
-                Debug.Print("Exception when calling VportsApi.100InventoryVportByVportuuidGet: " + e.Message );
+                Debug.Print("Exception when calling VportsApi.InventoryVportByVportuuidGet: " + e.Message );
             }
         }
     }
@@ -182,11 +191,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**EndpointPort**](EndpointPort.md)
+[**List<EndpointPort>**](EndpointPort.md)
 
 ### Authorization
 
-No authorization required
+[auth](../README.md#auth)
 
 ### HTTP request headers
 

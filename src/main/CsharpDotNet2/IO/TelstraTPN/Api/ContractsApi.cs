@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 using RestSharp;
-using IO.TelstraTPN.Client;
+using IO.TelstraTPN;
 using IO.TelstraTPN.Model;
 
 namespace IO.TelstraTPN.Api
@@ -16,23 +16,23 @@ namespace IO.TelstraTPN.Api
         /// </summary>
         /// <param name="linkid">Unique identifier representing a specific link</param>
         /// <param name="contractid">Unique identifier representing a specific contract</param>
-        /// <returns>Model100InventoryLinksContractResponse</returns>
-        Model100InventoryLinksContractResponse 100InventoryLinksContractByLinkidAndContractidGet (string linkid, string contractid);
+        /// <returns>InventoryLinksContractResponse</returns>
+        InventoryLinksContractResponse InventoryLinksContractByLinkidAndContractidGet (string linkid, string contractid);
         /// <summary>
         /// Update active Contract by ContractID Update active Contract by ContractID
         /// </summary>
         /// <param name="linkid">Unique identifier representing a specific link</param>
         /// <param name="contractid">Unique identifier representing a specific contract</param>
         /// <param name="body"></param>
-        /// <returns>Model100InventoryLinksContractResponse33</returns>
-        Model100InventoryLinksContractResponse33 100InventoryLinksContractByLinkidAndContractidPut (string linkid, string contractid, Model100InventoryLinksContractRequest body);
+        /// <returns>InventoryLinksContractResponse33</returns>
+        InventoryLinksContractResponse33 InventoryLinksContractByLinkidAndContractidPut (string linkid, string contractid, InventoryLinksContractRequest body);
         /// <summary>
         /// Create new Contract on specified link Create new Contract on specified link
         /// </summary>
         /// <param name="linkid">Unique identifier representing a specific link</param>
         /// <param name="body"></param>
-        /// <returns>Model100InventoryLinksContractResponse38</returns>
-        Model100InventoryLinksContractResponse38 100InventoryLinksContractByLinkidPost (string linkid, Model100InventoryLinksContractRequest37 body);
+        /// <returns>List&lt;InventoryLinksContractResponse38&gt;</returns>
+        List<InventoryLinksContractResponse38> InventoryLinksContractByLinkidPost (string linkid, InventoryLinksContractRequest37 body);
     }
   
     /// <summary>
@@ -93,15 +93,15 @@ namespace IO.TelstraTPN.Api
         /// </summary>
         /// <param name="linkid">Unique identifier representing a specific link</param> 
         /// <param name="contractid">Unique identifier representing a specific contract</param> 
-        /// <returns>Model100InventoryLinksContractResponse</returns>            
-        public Model100InventoryLinksContractResponse 100InventoryLinksContractByLinkidAndContractidGet (string linkid, string contractid)
+        /// <returns>InventoryLinksContractResponse</returns>            
+        public InventoryLinksContractResponse InventoryLinksContractByLinkidAndContractidGet (string linkid, string contractid)
         {
             
             // verify the required parameter 'linkid' is set
-            if (linkid == null) throw new ApiException(400, "Missing required parameter 'linkid' when calling 100InventoryLinksContractByLinkidAndContractidGet");
+            if (linkid == null) throw new ApiException(400, "Missing required parameter 'linkid' when calling InventoryLinksContractByLinkidAndContractidGet");
             
             // verify the required parameter 'contractid' is set
-            if (contractid == null) throw new ApiException(400, "Missing required parameter 'contractid' when calling 100InventoryLinksContractByLinkidAndContractidGet");
+            if (contractid == null) throw new ApiException(400, "Missing required parameter 'contractid' when calling InventoryLinksContractByLinkidAndContractidGet");
             
     
             var path = "/1.0.0/inventory/links/{linkid}/contract/{contractid}";
@@ -117,17 +117,17 @@ path = path.Replace("{" + "contractid" + "}", ApiClient.ParameterToString(contra
     
                                                     
             // authentication setting, if any
-            String[] authSettings = new String[] {  };
+            String[] authSettings = new String[] { "auth" };
     
             // make the HTTP request
             IRestResponse response = (IRestResponse) ApiClient.CallApi(path, Method.GET, queryParams, postBody, headerParams, formParams, fileParams, authSettings);
     
             if (((int)response.StatusCode) >= 400)
-                throw new ApiException ((int)response.StatusCode, "Error calling 100InventoryLinksContractByLinkidAndContractidGet: " + response.Content, response.Content);
+                throw new ApiException ((int)response.StatusCode, "Error calling InventoryLinksContractByLinkidAndContractidGet: " + response.Content, response.Content);
             else if (((int)response.StatusCode) == 0)
-                throw new ApiException ((int)response.StatusCode, "Error calling 100InventoryLinksContractByLinkidAndContractidGet: " + response.ErrorMessage, response.ErrorMessage);
+                throw new ApiException ((int)response.StatusCode, "Error calling InventoryLinksContractByLinkidAndContractidGet: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (Model100InventoryLinksContractResponse) ApiClient.Deserialize(response.Content, typeof(Model100InventoryLinksContractResponse), response.Headers);
+            return (InventoryLinksContractResponse) ApiClient.Deserialize(response.Content, typeof(InventoryLinksContractResponse), response.Headers);
         }
     
         /// <summary>
@@ -136,15 +136,15 @@ path = path.Replace("{" + "contractid" + "}", ApiClient.ParameterToString(contra
         /// <param name="linkid">Unique identifier representing a specific link</param> 
         /// <param name="contractid">Unique identifier representing a specific contract</param> 
         /// <param name="body"></param> 
-        /// <returns>Model100InventoryLinksContractResponse33</returns>            
-        public Model100InventoryLinksContractResponse33 100InventoryLinksContractByLinkidAndContractidPut (string linkid, string contractid, Model100InventoryLinksContractRequest body)
+        /// <returns>InventoryLinksContractResponse33</returns>            
+        public InventoryLinksContractResponse33 InventoryLinksContractByLinkidAndContractidPut (string linkid, string contractid, InventoryLinksContractRequest body)
         {
             
             // verify the required parameter 'linkid' is set
-            if (linkid == null) throw new ApiException(400, "Missing required parameter 'linkid' when calling 100InventoryLinksContractByLinkidAndContractidPut");
+            if (linkid == null) throw new ApiException(400, "Missing required parameter 'linkid' when calling InventoryLinksContractByLinkidAndContractidPut");
             
             // verify the required parameter 'contractid' is set
-            if (contractid == null) throw new ApiException(400, "Missing required parameter 'contractid' when calling 100InventoryLinksContractByLinkidAndContractidPut");
+            if (contractid == null) throw new ApiException(400, "Missing required parameter 'contractid' when calling InventoryLinksContractByLinkidAndContractidPut");
             
     
             var path = "/1.0.0/inventory/links/{linkid}/contract/{contractid}";
@@ -161,17 +161,17 @@ path = path.Replace("{" + "contractid" + "}", ApiClient.ParameterToString(contra
                                                 postBody = ApiClient.Serialize(body); // http body (model) parameter
     
             // authentication setting, if any
-            String[] authSettings = new String[] {  };
+            String[] authSettings = new String[] { "auth" };
     
             // make the HTTP request
             IRestResponse response = (IRestResponse) ApiClient.CallApi(path, Method.PUT, queryParams, postBody, headerParams, formParams, fileParams, authSettings);
     
             if (((int)response.StatusCode) >= 400)
-                throw new ApiException ((int)response.StatusCode, "Error calling 100InventoryLinksContractByLinkidAndContractidPut: " + response.Content, response.Content);
+                throw new ApiException ((int)response.StatusCode, "Error calling InventoryLinksContractByLinkidAndContractidPut: " + response.Content, response.Content);
             else if (((int)response.StatusCode) == 0)
-                throw new ApiException ((int)response.StatusCode, "Error calling 100InventoryLinksContractByLinkidAndContractidPut: " + response.ErrorMessage, response.ErrorMessage);
+                throw new ApiException ((int)response.StatusCode, "Error calling InventoryLinksContractByLinkidAndContractidPut: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (Model100InventoryLinksContractResponse33) ApiClient.Deserialize(response.Content, typeof(Model100InventoryLinksContractResponse33), response.Headers);
+            return (InventoryLinksContractResponse33) ApiClient.Deserialize(response.Content, typeof(InventoryLinksContractResponse33), response.Headers);
         }
     
         /// <summary>
@@ -179,12 +179,12 @@ path = path.Replace("{" + "contractid" + "}", ApiClient.ParameterToString(contra
         /// </summary>
         /// <param name="linkid">Unique identifier representing a specific link</param> 
         /// <param name="body"></param> 
-        /// <returns>Model100InventoryLinksContractResponse38</returns>            
-        public Model100InventoryLinksContractResponse38 100InventoryLinksContractByLinkidPost (string linkid, Model100InventoryLinksContractRequest37 body)
+        /// <returns>List&lt;InventoryLinksContractResponse38&gt;</returns>            
+        public List<InventoryLinksContractResponse38> InventoryLinksContractByLinkidPost (string linkid, InventoryLinksContractRequest37 body)
         {
             
             // verify the required parameter 'linkid' is set
-            if (linkid == null) throw new ApiException(400, "Missing required parameter 'linkid' when calling 100InventoryLinksContractByLinkidPost");
+            if (linkid == null) throw new ApiException(400, "Missing required parameter 'linkid' when calling InventoryLinksContractByLinkidPost");
             
     
             var path = "/1.0.0/inventory/links/{linkid}/contract";
@@ -200,17 +200,17 @@ path = path.Replace("{" + "contractid" + "}", ApiClient.ParameterToString(contra
                                                 postBody = ApiClient.Serialize(body); // http body (model) parameter
     
             // authentication setting, if any
-            String[] authSettings = new String[] {  };
+            String[] authSettings = new String[] { "auth" };
     
             // make the HTTP request
             IRestResponse response = (IRestResponse) ApiClient.CallApi(path, Method.POST, queryParams, postBody, headerParams, formParams, fileParams, authSettings);
     
             if (((int)response.StatusCode) >= 400)
-                throw new ApiException ((int)response.StatusCode, "Error calling 100InventoryLinksContractByLinkidPost: " + response.Content, response.Content);
+                throw new ApiException ((int)response.StatusCode, "Error calling InventoryLinksContractByLinkidPost: " + response.Content, response.Content);
             else if (((int)response.StatusCode) == 0)
-                throw new ApiException ((int)response.StatusCode, "Error calling 100InventoryLinksContractByLinkidPost: " + response.ErrorMessage, response.ErrorMessage);
+                throw new ApiException ((int)response.StatusCode, "Error calling InventoryLinksContractByLinkidPost: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (Model100InventoryLinksContractResponse38) ApiClient.Deserialize(response.Content, typeof(Model100InventoryLinksContractResponse38), response.Headers);
+            return (List<InventoryLinksContractResponse38>) ApiClient.Deserialize(response.Content, typeof(List<InventoryLinksContractResponse38>), response.Headers);
         }
     
     }

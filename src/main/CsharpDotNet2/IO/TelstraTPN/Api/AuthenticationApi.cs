@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 using RestSharp;
-using IO.TelstraTPN.Client;
+using IO.TelstraTPN;
 using IO.TelstraTPN.Model;
 
 namespace IO.TelstraTPN.Api
@@ -17,13 +17,13 @@ namespace IO.TelstraTPN.Api
         /// <param name="grantType"></param>
         /// <param name="username"></param>
         /// <param name="password"></param>
-        /// <returns>Model100AuthGeneratetokenResponse</returns>
-        Model100AuthGeneratetokenResponse 100AuthGeneratetokenPost (string grantType, string username, string password);
+        /// <returns>AuthGeneratetokenResponse</returns>
+        AuthGeneratetokenResponse AuthGeneratetokenPost (string grantType, string username, string password);
         /// <summary>
         /// Validate authentication token Validate the authentication token and get information about the user (roles, permissions, etc.)
         /// </summary>
-        /// <returns>Model100AuthValidatetokenResponse</returns>
-        Model100AuthValidatetokenResponse 100AuthValidatetokenGet ();
+        /// <returns>AuthValidatetokenResponse</returns>
+        AuthValidatetokenResponse AuthValidatetokenGet ();
     }
   
     /// <summary>
@@ -85,18 +85,18 @@ namespace IO.TelstraTPN.Api
         /// <param name="grantType"></param> 
         /// <param name="username"></param> 
         /// <param name="password"></param> 
-        /// <returns>Model100AuthGeneratetokenResponse</returns>            
-        public Model100AuthGeneratetokenResponse 100AuthGeneratetokenPost (string grantType, string username, string password)
+        /// <returns>AuthGeneratetokenResponse</returns>            
+        public AuthGeneratetokenResponse AuthGeneratetokenPost (string grantType, string username, string password)
         {
             
             // verify the required parameter 'grantType' is set
-            if (grantType == null) throw new ApiException(400, "Missing required parameter 'grantType' when calling 100AuthGeneratetokenPost");
+            if (grantType == null) throw new ApiException(400, "Missing required parameter 'grantType' when calling AuthGeneratetokenPost");
             
             // verify the required parameter 'username' is set
-            if (username == null) throw new ApiException(400, "Missing required parameter 'username' when calling 100AuthGeneratetokenPost");
+            if (username == null) throw new ApiException(400, "Missing required parameter 'username' when calling AuthGeneratetokenPost");
             
             // verify the required parameter 'password' is set
-            if (password == null) throw new ApiException(400, "Missing required parameter 'password' when calling 100AuthGeneratetokenPost");
+            if (password == null) throw new ApiException(400, "Missing required parameter 'password' when calling AuthGeneratetokenPost");
             
     
             var path = "/1.0.0/auth/generatetoken";
@@ -119,18 +119,18 @@ if (password != null) formParams.Add("password", ApiClient.ParameterToString(pas
             IRestResponse response = (IRestResponse) ApiClient.CallApi(path, Method.POST, queryParams, postBody, headerParams, formParams, fileParams, authSettings);
     
             if (((int)response.StatusCode) >= 400)
-                throw new ApiException ((int)response.StatusCode, "Error calling 100AuthGeneratetokenPost: " + response.Content, response.Content);
+                throw new ApiException ((int)response.StatusCode, "Error calling AuthGeneratetokenPost: " + response.Content, response.Content);
             else if (((int)response.StatusCode) == 0)
-                throw new ApiException ((int)response.StatusCode, "Error calling 100AuthGeneratetokenPost: " + response.ErrorMessage, response.ErrorMessage);
+                throw new ApiException ((int)response.StatusCode, "Error calling AuthGeneratetokenPost: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (Model100AuthGeneratetokenResponse) ApiClient.Deserialize(response.Content, typeof(Model100AuthGeneratetokenResponse), response.Headers);
+            return (AuthGeneratetokenResponse) ApiClient.Deserialize(response.Content, typeof(AuthGeneratetokenResponse), response.Headers);
         }
     
         /// <summary>
         /// Validate authentication token Validate the authentication token and get information about the user (roles, permissions, etc.)
         /// </summary>
-        /// <returns>Model100AuthValidatetokenResponse</returns>            
-        public Model100AuthValidatetokenResponse 100AuthValidatetokenGet ()
+        /// <returns>AuthValidatetokenResponse</returns>            
+        public AuthValidatetokenResponse AuthValidatetokenGet ()
         {
             
     
@@ -151,11 +151,11 @@ if (password != null) formParams.Add("password", ApiClient.ParameterToString(pas
             IRestResponse response = (IRestResponse) ApiClient.CallApi(path, Method.GET, queryParams, postBody, headerParams, formParams, fileParams, authSettings);
     
             if (((int)response.StatusCode) >= 400)
-                throw new ApiException ((int)response.StatusCode, "Error calling 100AuthValidatetokenGet: " + response.Content, response.Content);
+                throw new ApiException ((int)response.StatusCode, "Error calling AuthValidatetokenGet: " + response.Content, response.Content);
             else if (((int)response.StatusCode) == 0)
-                throw new ApiException ((int)response.StatusCode, "Error calling 100AuthValidatetokenGet: " + response.ErrorMessage, response.ErrorMessage);
+                throw new ApiException ((int)response.StatusCode, "Error calling AuthValidatetokenGet: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (Model100AuthValidatetokenResponse) ApiClient.Deserialize(response.Content, typeof(Model100AuthValidatetokenResponse), response.Headers);
+            return (AuthValidatetokenResponse) ApiClient.Deserialize(response.Content, typeof(AuthValidatetokenResponse), response.Headers);
         }
     
     }

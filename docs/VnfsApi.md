@@ -1,15 +1,15 @@
-# IO.TelstraTPN..VnfsApi
+# IO.TelstraTPN.Api.VnfsApi
 
 All URIs are relative to *https://penapi.pacnetconnect.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**100MarketplaceImageGet**](VnfsApi.md#100marketplaceimageget) | **GET** /1.0.0/marketplace/image | List images in the Marketplace
+[**MarketplaceImageGet**](VnfsApi.md#marketplaceimageget) | **GET** /1.0.0/marketplace/image | List images in the Marketplace
 
 
-<a name="100marketplaceimageget"></a>
-# **100MarketplaceImageGet**
-> Model100MarketplaceImageResponse 100MarketplaceImageGet ()
+<a name="marketplaceimageget"></a>
+# **MarketplaceImageGet**
+> MarketplaceImageResponse MarketplaceImageGet ()
 
 List images in the Marketplace
 
@@ -20,27 +20,30 @@ List images in the Marketplace
 using System;
 using System.Diagnostics;
 using IO.TelstraTPN.Api;
-using IO.TelstraTPN.Client;
+using IO.TelstraTPN;
 using IO.TelstraTPN.Model;
 
 namespace Example
 {
-    public class 100MarketplaceImageGetExample
+    public class MarketplaceImageGetExample
     {
         public void main()
         {
             
+            // Configure OAuth2 access token for authorization: auth
+            Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
+
             var apiInstance = new VnfsApi();
 
             try
             {
                 // List images in the Marketplace
-                Model100MarketplaceImageResponse result = apiInstance.100MarketplaceImageGet();
+                MarketplaceImageResponse result = apiInstance.MarketplaceImageGet();
                 Debug.WriteLine(result);
             }
             catch (Exception e)
             {
-                Debug.Print("Exception when calling VnfsApi.100MarketplaceImageGet: " + e.Message );
+                Debug.Print("Exception when calling VnfsApi.MarketplaceImageGet: " + e.Message );
             }
         }
     }
@@ -52,11 +55,11 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**Model100MarketplaceImageResponse**](Model100MarketplaceImageResponse.md)
+[**MarketplaceImageResponse**](MarketplaceImageResponse.md)
 
 ### Authorization
 
-No authorization required
+[auth](../README.md#auth)
 
 ### HTTP request headers
 

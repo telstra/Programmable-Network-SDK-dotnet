@@ -1,4 +1,4 @@
-# IO.TelstraTPN..TopologiesApi
+# IO.TelstraTPN.Api.TopologiesApi
 
 All URIs are relative to *https://penapi.pacnetconnect.com*
 
@@ -25,7 +25,7 @@ Delete a topology tag
 using System;
 using System.Diagnostics;
 using IO.TelstraTPN.Api;
-using IO.TelstraTPN.Client;
+using IO.TelstraTPN;
 using IO.TelstraTPN.Model;
 
 namespace Example
@@ -86,7 +86,7 @@ Get information about the specified topology tag
 using System;
 using System.Diagnostics;
 using IO.TelstraTPN.Api;
-using IO.TelstraTPN.Client;
+using IO.TelstraTPN;
 using IO.TelstraTPN.Model;
 
 namespace Example
@@ -148,7 +148,7 @@ Update a topology tag's name and/or description
 using System;
 using System.Diagnostics;
 using IO.TelstraTPN.Api;
-using IO.TelstraTPN.Client;
+using IO.TelstraTPN;
 using IO.TelstraTPN.Model;
 
 namespace Example
@@ -212,7 +212,7 @@ List all topology tags
 using System;
 using System.Diagnostics;
 using IO.TelstraTPN.Api;
-using IO.TelstraTPN.Client;
+using IO.TelstraTPN;
 using IO.TelstraTPN.Model;
 
 namespace Example
@@ -270,7 +270,7 @@ List all objects (Endpoints, Links, VPorts, etc.) associated with the topology t
 using System;
 using System.Diagnostics;
 using IO.TelstraTPN.Api;
-using IO.TelstraTPN.Client;
+using IO.TelstraTPN;
 using IO.TelstraTPN.Model;
 
 namespace Example
@@ -332,7 +332,7 @@ Create a named topology tag
 using System;
 using System.Diagnostics;
 using IO.TelstraTPN.Api;
-using IO.TelstraTPN.Client;
+using IO.TelstraTPN;
 using IO.TelstraTPN.Model;
 
 namespace Example

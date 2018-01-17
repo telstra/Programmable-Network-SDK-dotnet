@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 using RestSharp;
-using IO.TelstraTPN.Client;
+using IO.TelstraTPN;
 using IO.TelstraTPN.Model;
 
 namespace IO.TelstraTPN.Api
@@ -15,14 +15,14 @@ namespace IO.TelstraTPN.Api
         /// Get account information details Get the account information for the specified customer
         /// </summary>
         /// <param name="customeruuid">Unique identifier representing a specific customer</param>
-        /// <returns>Model100AccountResponse</returns>
-        Model100AccountResponse 100AccountByCustomeruuidGet (string customeruuid);
+        /// <returns>List&lt;AccountResponse&gt;</returns>
+        List<AccountResponse> AccountByCustomeruuidGet (string customeruuid);
         /// <summary>
         /// List users List all users associated with the specified customer
         /// </summary>
         /// <param name="customeruuid">Unique identifier representing a specific customer</param>
         /// <returns>List&lt;User&gt;</returns>
-        List<User> 100AccountUserByCustomeruuidGet (string customeruuid);
+        List<User> AccountUserByCustomeruuidGet (string customeruuid);
     }
   
     /// <summary>
@@ -82,12 +82,12 @@ namespace IO.TelstraTPN.Api
         /// Get account information details Get the account information for the specified customer
         /// </summary>
         /// <param name="customeruuid">Unique identifier representing a specific customer</param> 
-        /// <returns>Model100AccountResponse</returns>            
-        public Model100AccountResponse 100AccountByCustomeruuidGet (string customeruuid)
+        /// <returns>List&lt;AccountResponse&gt;</returns>            
+        public List<AccountResponse> AccountByCustomeruuidGet (string customeruuid)
         {
             
             // verify the required parameter 'customeruuid' is set
-            if (customeruuid == null) throw new ApiException(400, "Missing required parameter 'customeruuid' when calling 100AccountByCustomeruuidGet");
+            if (customeruuid == null) throw new ApiException(400, "Missing required parameter 'customeruuid' when calling AccountByCustomeruuidGet");
             
     
             var path = "/1.0.0/account/{customeruuid}";
@@ -102,17 +102,17 @@ namespace IO.TelstraTPN.Api
     
                                                     
             // authentication setting, if any
-            String[] authSettings = new String[] {  };
+            String[] authSettings = new String[] { "auth" };
     
             // make the HTTP request
             IRestResponse response = (IRestResponse) ApiClient.CallApi(path, Method.GET, queryParams, postBody, headerParams, formParams, fileParams, authSettings);
     
             if (((int)response.StatusCode) >= 400)
-                throw new ApiException ((int)response.StatusCode, "Error calling 100AccountByCustomeruuidGet: " + response.Content, response.Content);
+                throw new ApiException ((int)response.StatusCode, "Error calling AccountByCustomeruuidGet: " + response.Content, response.Content);
             else if (((int)response.StatusCode) == 0)
-                throw new ApiException ((int)response.StatusCode, "Error calling 100AccountByCustomeruuidGet: " + response.ErrorMessage, response.ErrorMessage);
+                throw new ApiException ((int)response.StatusCode, "Error calling AccountByCustomeruuidGet: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (Model100AccountResponse) ApiClient.Deserialize(response.Content, typeof(Model100AccountResponse), response.Headers);
+            return (List<AccountResponse>) ApiClient.Deserialize(response.Content, typeof(List<AccountResponse>), response.Headers);
         }
     
         /// <summary>
@@ -120,11 +120,11 @@ namespace IO.TelstraTPN.Api
         /// </summary>
         /// <param name="customeruuid">Unique identifier representing a specific customer</param> 
         /// <returns>List&lt;User&gt;</returns>            
-        public List<User> 100AccountUserByCustomeruuidGet (string customeruuid)
+        public List<User> AccountUserByCustomeruuidGet (string customeruuid)
         {
             
             // verify the required parameter 'customeruuid' is set
-            if (customeruuid == null) throw new ApiException(400, "Missing required parameter 'customeruuid' when calling 100AccountUserByCustomeruuidGet");
+            if (customeruuid == null) throw new ApiException(400, "Missing required parameter 'customeruuid' when calling AccountUserByCustomeruuidGet");
             
     
             var path = "/1.0.0/account/{customeruuid}/user";
@@ -139,15 +139,15 @@ namespace IO.TelstraTPN.Api
     
                                                     
             // authentication setting, if any
-            String[] authSettings = new String[] {  };
+            String[] authSettings = new String[] { "auth" };
     
             // make the HTTP request
             IRestResponse response = (IRestResponse) ApiClient.CallApi(path, Method.GET, queryParams, postBody, headerParams, formParams, fileParams, authSettings);
     
             if (((int)response.StatusCode) >= 400)
-                throw new ApiException ((int)response.StatusCode, "Error calling 100AccountUserByCustomeruuidGet: " + response.Content, response.Content);
+                throw new ApiException ((int)response.StatusCode, "Error calling AccountUserByCustomeruuidGet: " + response.Content, response.Content);
             else if (((int)response.StatusCode) == 0)
-                throw new ApiException ((int)response.StatusCode, "Error calling 100AccountUserByCustomeruuidGet: " + response.ErrorMessage, response.ErrorMessage);
+                throw new ApiException ((int)response.StatusCode, "Error calling AccountUserByCustomeruuidGet: " + response.ErrorMessage, response.ErrorMessage);
     
             return (List<User>) ApiClient.Deserialize(response.Content, typeof(List<User>), response.Headers);
         }

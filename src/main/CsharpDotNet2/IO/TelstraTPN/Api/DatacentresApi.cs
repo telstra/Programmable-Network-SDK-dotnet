@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 using RestSharp;
-using IO.TelstraTPN.Client;
+using IO.TelstraTPN;
 using IO.TelstraTPN.Model;
 
 namespace IO.TelstraTPN.Api
@@ -14,8 +14,8 @@ namespace IO.TelstraTPN.Api
         /// <summary>
         /// Get list of all the data centers Get list of all the data centers
         /// </summary>
-        /// <returns>List&lt;Model100InventoryDatacentersResponse&gt;</returns>
-        List<Model100InventoryDatacentersResponse> 100InventoryDatacentersGet ();
+        /// <returns>List&lt;InventoryDatacentersResponse&gt;</returns>
+        List<InventoryDatacentersResponse> InventoryDatacentersGet ();
     }
   
     /// <summary>
@@ -74,8 +74,8 @@ namespace IO.TelstraTPN.Api
         /// <summary>
         /// Get list of all the data centers Get list of all the data centers
         /// </summary>
-        /// <returns>List&lt;Model100InventoryDatacentersResponse&gt;</returns>            
-        public List<Model100InventoryDatacentersResponse> 100InventoryDatacentersGet ()
+        /// <returns>List&lt;InventoryDatacentersResponse&gt;</returns>            
+        public List<InventoryDatacentersResponse> InventoryDatacentersGet ()
         {
             
     
@@ -90,17 +90,17 @@ namespace IO.TelstraTPN.Api
     
                                                     
             // authentication setting, if any
-            String[] authSettings = new String[] {  };
+            String[] authSettings = new String[] { "auth" };
     
             // make the HTTP request
             IRestResponse response = (IRestResponse) ApiClient.CallApi(path, Method.GET, queryParams, postBody, headerParams, formParams, fileParams, authSettings);
     
             if (((int)response.StatusCode) >= 400)
-                throw new ApiException ((int)response.StatusCode, "Error calling 100InventoryDatacentersGet: " + response.Content, response.Content);
+                throw new ApiException ((int)response.StatusCode, "Error calling InventoryDatacentersGet: " + response.Content, response.Content);
             else if (((int)response.StatusCode) == 0)
-                throw new ApiException ((int)response.StatusCode, "Error calling 100InventoryDatacentersGet: " + response.ErrorMessage, response.ErrorMessage);
+                throw new ApiException ((int)response.StatusCode, "Error calling InventoryDatacentersGet: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (List<Model100InventoryDatacentersResponse>) ApiClient.Deserialize(response.Content, typeof(List<Model100InventoryDatacentersResponse>), response.Headers);
+            return (List<InventoryDatacentersResponse>) ApiClient.Deserialize(response.Content, typeof(List<InventoryDatacentersResponse>), response.Headers);
         }
     
     }
